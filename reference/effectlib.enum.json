@@ -1,0 +1,859 @@
+{
+  "_generated_by": "tools/gen_effectlib_reference.mjs",
+  "classes": {
+    "AnimatedBall": [
+      "particles",
+      "particles_per_iteration",
+      "size",
+      "x_factor",
+      "x_offset",
+      "x_rotation",
+      "y_offset",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "AnimatedBallEffect": [
+      "particles",
+      "particles_per_iteration",
+      "size",
+      "x_factor",
+      "x_offset",
+      "x_rotation",
+      "y_offset",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "Arc": [
+      "height",
+      "particles"
+    ],
+    "ArcEffect": [
+      "height",
+      "particles"
+    ],
+    "Atom": [
+      "angular_velocity",
+      "color_nucleus",
+      "color_orbital",
+      "orbitals",
+      "orient",
+      "particle_nucleus",
+      "particle_orbital",
+      "particles_nucleus",
+      "particles_orbital",
+      "radius",
+      "radius_nucleus",
+      "rotation"
+    ],
+    "AtomEffect": [
+      "angular_velocity",
+      "color_nucleus",
+      "color_orbital",
+      "orbitals",
+      "orient",
+      "particle_nucleus",
+      "particle_orbital",
+      "particles_nucleus",
+      "particles_orbital",
+      "radius",
+      "radius_nucleus",
+      "rotation"
+    ],
+    "BigBang": [
+      "color2",
+      "color3",
+      "explosions",
+      "fade_color",
+      "firework_type",
+      "intensity",
+      "radius",
+      "sound",
+      "sound_interval",
+      "sound_pitch",
+      "sound_volume"
+    ],
+    "BigBangEffect": [
+      "color2",
+      "color3",
+      "explosions",
+      "fade_color",
+      "firework_type",
+      "intensity",
+      "radius",
+      "sound",
+      "sound_interval",
+      "sound_pitch",
+      "sound_volume"
+    ],
+    "Bleed": [
+      "height",
+      "hurt",
+      "material"
+    ],
+    "BleedEffect": [
+      "height",
+      "hurt",
+      "material"
+    ],
+    "Circle": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "enable_rotation",
+      "max_angle",
+      "orient",
+      "particles",
+      "radius",
+      "reset_circle",
+      "whole_circle",
+      "x_rotation",
+      "x_subtract",
+      "y_rotation",
+      "y_subtract",
+      "z_rotation",
+      "z_subtract"
+    ],
+    "CircleEffect": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "enable_rotation",
+      "max_angle",
+      "orient",
+      "particles",
+      "radius",
+      "reset_circle",
+      "whole_circle",
+      "x_rotation",
+      "x_subtract",
+      "y_rotation",
+      "y_subtract",
+      "z_rotation",
+      "z_subtract"
+    ],
+    "Cloud": [
+      "cloud_color",
+      "cloud_particle",
+      "cloud_particles",
+      "cloud_size",
+      "cloud_speed",
+      "increase_height",
+      "main_particle",
+      "main_particles",
+      "particle_radius",
+      "y_offset"
+    ],
+    "CloudEffect": [
+      "cloud_color",
+      "cloud_particle",
+      "cloud_particles",
+      "cloud_size",
+      "cloud_speed",
+      "increase_height",
+      "main_particle",
+      "main_particles",
+      "particle_radius",
+      "y_offset"
+    ],
+    "ColoredImage": [],
+    "ColoredImageEffect": [],
+    "Cone": [
+      "angular_velocity",
+      "length_grow",
+      "particles",
+      "particles_cone",
+      "radius_grow",
+      "randomize",
+      "rotation",
+      "solid",
+      "strands"
+    ],
+    "ConeEffect": [
+      "angular_velocity",
+      "length_grow",
+      "particles",
+      "particles_cone",
+      "radius_grow",
+      "randomize",
+      "rotation",
+      "solid",
+      "strands"
+    ],
+    "Cube": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "edge_length",
+      "enable_rotation",
+      "orient",
+      "outline_only",
+      "particles"
+    ],
+    "CubeEffect": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "edge_length",
+      "enable_rotation",
+      "orient",
+      "outline_only",
+      "particles"
+    ],
+    "Cuboid": [
+      "block_snap",
+      "padding",
+      "particles",
+      "x_length",
+      "y_length",
+      "z_length"
+    ],
+    "CuboidEffect": [
+      "block_snap",
+      "padding",
+      "particles",
+      "x_length",
+      "y_length",
+      "z_length"
+    ],
+    "Cylinder": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "enable_rotation",
+      "height",
+      "orient",
+      "particles",
+      "radius",
+      "rotation_x",
+      "rotation_y",
+      "rotation_z",
+      "solid"
+    ],
+    "CylinderEffect": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "enable_rotation",
+      "height",
+      "orient",
+      "particles",
+      "radius",
+      "rotation_x",
+      "rotation_y",
+      "rotation_z",
+      "solid"
+    ],
+    "DiscoBall": [
+      "direction",
+      "line_color",
+      "line_particle",
+      "line_particles",
+      "max",
+      "max_lines",
+      "sphere_color",
+      "sphere_particle",
+      "sphere_particles",
+      "sphere_radius"
+    ],
+    "DiscoBallEffect": [
+      "direction",
+      "line_color",
+      "line_particle",
+      "line_particles",
+      "max",
+      "max_lines",
+      "sphere_color",
+      "sphere_particle",
+      "sphere_particles",
+      "sphere_radius"
+    ],
+    "Dna": [
+      "base_interval",
+      "color_base1",
+      "color_base2",
+      "color_helix",
+      "grow",
+      "length",
+      "particle_base1",
+      "particle_base2",
+      "particle_helix",
+      "particles_base",
+      "particles_helix",
+      "radials",
+      "radius"
+    ],
+    "DnaEffect": [
+      "base_interval",
+      "color_base1",
+      "color_base2",
+      "color_helix",
+      "grow",
+      "length",
+      "particle_base1",
+      "particle_base2",
+      "particle_helix",
+      "particles_base",
+      "particles_helix",
+      "radials",
+      "radius"
+    ],
+    "Donut": [
+      "circles",
+      "particles_circle",
+      "radius_donut",
+      "radius_tube",
+      "x_rotation",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "DonutEffect": [
+      "circles",
+      "particles_circle",
+      "radius_donut",
+      "radius_tube",
+      "x_rotation",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "Dragon": [
+      "arcs",
+      "length",
+      "particles",
+      "pitch",
+      "steps_per_iteration"
+    ],
+    "DragonEffect": [
+      "arcs",
+      "length",
+      "particles",
+      "pitch",
+      "steps_per_iteration"
+    ],
+    "Earth": [
+      "color_land",
+      "color_ocean",
+      "mountain_height",
+      "particle_land",
+      "particle_ocean",
+      "particles",
+      "particles_land",
+      "particles_ocean",
+      "precision",
+      "radius",
+      "speed_land",
+      "speed_ocean"
+    ],
+    "EarthEffect": [
+      "color_land",
+      "color_ocean",
+      "mountain_height",
+      "particle_land",
+      "particle_ocean",
+      "particles",
+      "particles_land",
+      "particles_ocean",
+      "precision",
+      "radius",
+      "speed_land",
+      "speed_ocean"
+    ],
+    "Equation": [
+      "cycle_mini_step",
+      "max_steps",
+      "orient",
+      "orient_pitch",
+      "particles",
+      "particles2",
+      "variable",
+      "variable2",
+      "x2_equation",
+      "x_equation",
+      "y2_equation",
+      "y_equation",
+      "z2_equation",
+      "z_equation"
+    ],
+    "EquationEffect": [
+      "cycle_mini_step",
+      "max_steps",
+      "orient",
+      "orient_pitch",
+      "particles",
+      "particles2",
+      "variable",
+      "variable2",
+      "x2_equation",
+      "x_equation",
+      "y2_equation",
+      "y_equation",
+      "z2_equation",
+      "z_equation"
+    ],
+    "Explode": [
+      "amount",
+      "particle1",
+      "particle2",
+      "sound"
+    ],
+    "ExplodeEffect": [
+      "amount",
+      "particle1",
+      "particle2",
+      "sound"
+    ],
+    "Flame": [
+      "particles"
+    ],
+    "FlameEffect": [
+      "particles"
+    ],
+    "Fountain": [
+      "height",
+      "height_spout",
+      "particles_spout",
+      "particles_strand",
+      "radius",
+      "radius_spout",
+      "rotation",
+      "strands"
+    ],
+    "FountainEffect": [
+      "height",
+      "height_spout",
+      "particles_spout",
+      "particles_strand",
+      "radius",
+      "radius_spout",
+      "rotation",
+      "strands"
+    ],
+    "Grid": [
+      "center",
+      "columns",
+      "height_cell",
+      "particles_height",
+      "particles_width",
+      "rotation",
+      "rotation_x",
+      "rotation_z",
+      "rows",
+      "width_cell"
+    ],
+    "GridEffect": [
+      "center",
+      "columns",
+      "height_cell",
+      "particles_height",
+      "particles_width",
+      "rotation",
+      "rotation_x",
+      "rotation_z",
+      "rows",
+      "width_cell"
+    ],
+    "Heart": [
+      "compilation",
+      "compress_y_factor_total",
+      "factor_inner_spike",
+      "particles",
+      "x_rotation",
+      "y_factor",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "HeartEffect": [
+      "compilation",
+      "compress_y_factor_total",
+      "factor_inner_spike",
+      "particles",
+      "x_rotation",
+      "y_factor",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "Helix": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "curve",
+      "enable_rotation",
+      "orient",
+      "particles",
+      "radius",
+      "rotation",
+      "strands",
+      "x_rotation",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "HelixEffect": [
+      "angular_velocity_x",
+      "angular_velocity_y",
+      "angular_velocity_z",
+      "curve",
+      "enable_rotation",
+      "orient",
+      "particles",
+      "radius",
+      "rotation",
+      "strands",
+      "x_rotation",
+      "y_rotation",
+      "z_rotation"
+    ],
+    "Hill": [
+      "edge_length",
+      "height",
+      "particles",
+      "y_rotation"
+    ],
+    "HillEffect": [
+      "edge_length",
+      "height",
+      "particles",
+      "y_rotation"
+    ],
+    "Icon": [
+      "y_offset"
+    ],
+    "IconEffect": [
+      "y_offset"
+    ],
+    "Image": [
+      "invert"
+    ],
+    "ImageEffect": [
+      "invert"
+    ],
+    "Jump": [
+      "power"
+    ],
+    "JumpEffect": [
+      "power"
+    ],
+    "Line": [
+      "is_zig_zag",
+      "length",
+      "max_length",
+      "particles",
+      "sub_effect_at_end",
+      "sub_effect_at_end_cached",
+      "zig_zag_offset",
+      "zig_zag_relative_offset",
+      "zig_zags"
+    ],
+    "LineEffect": [
+      "is_zig_zag",
+      "length",
+      "max_length",
+      "particles",
+      "sub_effect_at_end",
+      "sub_effect_at_end_cached",
+      "zig_zag_offset",
+      "zig_zag_relative_offset",
+      "zig_zags"
+    ],
+    "Love": [],
+    "LoveEffect": [],
+    "Modified": [
+      "effect",
+      "effect_class",
+      "orient",
+      "orient_pitch",
+      "parameters",
+      "variable_a",
+      "variable_b",
+      "x_equation",
+      "y_equation",
+      "z_equation"
+    ],
+    "ModifiedEffect": [
+      "effect",
+      "effect_class",
+      "orient",
+      "orient_pitch",
+      "parameters",
+      "variable_a",
+      "variable_b",
+      "x_equation",
+      "y_equation",
+      "z_equation"
+    ],
+    "Music": [
+      "radials_per_step",
+      "radius"
+    ],
+    "MusicEffect": [
+      "radials_per_step",
+      "radius"
+    ],
+    "Particle": [],
+    "ParticleEffect": [],
+    "Plot": [
+      "persistent",
+      "x_equation",
+      "x_scale",
+      "y_equation",
+      "y_scale",
+      "z_equation",
+      "z_scale"
+    ],
+    "PlotEffect": [
+      "persistent",
+      "x_equation",
+      "x_scale",
+      "y_equation",
+      "y_scale",
+      "z_equation",
+      "z_scale"
+    ],
+    "Pyramid": [
+      "particles",
+      "radius"
+    ],
+    "PyramidEffect": [
+      "particles",
+      "radius"
+    ],
+    "Shield": [
+      "particles",
+      "radius",
+      "reverse",
+      "sphere"
+    ],
+    "ShieldEffect": [
+      "particles",
+      "radius",
+      "reverse",
+      "sphere"
+    ],
+    "SkyRocket": [],
+    "SkyRocketEffect": [],
+    "Smoke": [
+      "particles"
+    ],
+    "SmokeEffect": [
+      "particles"
+    ],
+    "Sound": [
+      "sound"
+    ],
+    "SoundEffect": [
+      "sound"
+    ],
+    "Sphere": [
+      "particle_increase",
+      "particles",
+      "radius",
+      "radius_increase",
+      "y_offset"
+    ],
+    "SphereEffect": [
+      "particle_increase",
+      "particles",
+      "radius",
+      "radius_increase",
+      "y_offset"
+    ],
+    "Square": [
+      "particle_increase",
+      "particles",
+      "radius",
+      "radius_increase",
+      "y_offset"
+    ],
+    "SquareEffect": [
+      "particle_increase",
+      "particles",
+      "radius",
+      "radius_increase",
+      "y_offset"
+    ],
+    "Star": [
+      "inner_radius",
+      "particles",
+      "spike_height",
+      "spikes_half"
+    ],
+    "StarEffect": [
+      "inner_radius",
+      "particles",
+      "spike_height",
+      "spikes_half"
+    ],
+    "Text": [
+      "font",
+      "invert",
+      "realtime",
+      "size",
+      "step_x",
+      "step_y",
+      "text"
+    ],
+    "TextEffect": [
+      "font",
+      "invert",
+      "realtime",
+      "size",
+      "step_x",
+      "step_y",
+      "text"
+    ],
+    "Tornado": [
+      "circle_height",
+      "circle_particles",
+      "cloud_color",
+      "cloud_particle",
+      "cloud_particles",
+      "cloud_size",
+      "cloud_speed",
+      "distance",
+      "max_tornado_radius",
+      "show_cloud",
+      "show_tornado",
+      "tornado_color",
+      "tornado_height",
+      "tornado_particle",
+      "y_offset"
+    ],
+    "TornadoEffect": [
+      "circle_height",
+      "circle_particles",
+      "cloud_color",
+      "cloud_particle",
+      "cloud_particles",
+      "cloud_size",
+      "cloud_speed",
+      "distance",
+      "max_tornado_radius",
+      "show_cloud",
+      "show_tornado",
+      "tornado_color",
+      "tornado_height",
+      "tornado_particle",
+      "y_offset"
+    ],
+    "Trace": [
+      "max_way_points",
+      "refresh"
+    ],
+    "TraceEffect": [
+      "max_way_points",
+      "refresh"
+    ],
+    "Turn": [
+      "step"
+    ],
+    "TurnEffect": [
+      "step"
+    ],
+    "Vortex": [
+      "circles",
+      "grow",
+      "helixes",
+      "init_range",
+      "radials",
+      "radius",
+      "radius_grow"
+    ],
+    "VortexEffect": [
+      "circles",
+      "grow",
+      "helixes",
+      "init_range",
+      "radials",
+      "radius",
+      "radius_grow"
+    ],
+    "Warp": [
+      "grow",
+      "particles",
+      "radius",
+      "rings"
+    ],
+    "WarpEffect": [
+      "grow",
+      "particles",
+      "radius",
+      "rings"
+    ],
+    "Wave": [
+      "cloud_color",
+      "cloud_particle",
+      "depth_front",
+      "height",
+      "height_back",
+      "length_back",
+      "length_front",
+      "main_particle",
+      "particles_back",
+      "particles_front",
+      "rows",
+      "velocity",
+      "width"
+    ],
+    "WaveEffect": [
+      "cloud_color",
+      "cloud_particle",
+      "depth_front",
+      "height",
+      "height_back",
+      "length_back",
+      "length_front",
+      "main_particle",
+      "particles_back",
+      "particles_front",
+      "rows",
+      "velocity",
+      "width"
+    ]
+  },
+  "base": [
+    "arrival_time",
+    "asynchronous",
+    "auto_orient",
+    "block_data",
+    "block_duration",
+    "callback",
+    "color",
+    "color_list",
+    "colors",
+    "delay",
+    "disappear_with_origin_entity",
+    "disappear_with_target_entity",
+    "duration",
+    "iterations",
+    "material",
+    "material_data",
+    "offset",
+    "particle",
+    "particle_count",
+    "particle_data",
+    "particle_force_show",
+    "particle_offset_x",
+    "particle_offset_y",
+    "particle_offset_z",
+    "particle_size",
+    "period",
+    "pitch",
+    "pitch_offset",
+    "probability",
+    "relative_offset",
+    "sculk_charge_rotation",
+    "shriek_delay",
+    "speed",
+    "sub_effect",
+    "target_offset",
+    "target_players",
+    "to_color",
+    "to_color_list",
+    "to_colors",
+    "type",
+    "update_directions",
+    "update_locations",
+    "visible_range",
+    "yaw",
+    "yaw_offset"
+  ],
+  "abstract": []
+}

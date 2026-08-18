@@ -1,0 +1,45 @@
+# わざと間違えたサンプル。上の wand とセットで読み込む。
+broken_sword_slash:
+  name: サンプル斬撃
+  parameters:
+    target: self
+  actions:
+    cast:
+    - class: ConeOfEffect
+      radius: 4                   # ConeOfEffect は radius を読まない。扇の広さは fov
+      range: 5
+      actions:
+      - class: Damage
+        damage: 6
+        no_damage_ticks: 10       # 0 と同じ。多段ヒットを防げない
+  effects:
+    cast:
+    - location: origin
+      particle: redstone          # 1.20.5 で dust に改名された
+      delay: 40                   # ミリ秒。50 未満は 0tick になって遅延しない
+      particle_data: 0.1
+      particle_speed: 0.2         # particle_data と同じ値を指すので片方が無視される
+    - location: origin
+      sound: NOT_A_REAL_SOUND
+
+broken_sword_dash:
+  name: サンプル突進
+  parameters:
+    target: self
+  actions:
+    cast:
+    - class: CheckVelocity
+      min_speed: 0.5              # 実装が max_speed と同じ向きで意味が反転している
+      fail:
+      - class: Velocity
+        speed: 2.0
+        max_speed: 3.0            # max_speed があると speed は無視される
+    - class: AreaOfEffect
+      radius: 3.5                 # int に切り捨てられて 3 になる
+      actions:
+      - class: Damage
+        damage: 4
+    - class: Delay
+      delay: 20                   # ミリ秒。1tick 待ちに丸まる
+    - class: FallProtection
+      duration: 2000

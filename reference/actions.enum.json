@@ -1,0 +1,3608 @@
+{
+  "_generated_by": "tools/gen_action_reference.mjs",
+  "actions": {
+    "Absorb": [
+      "wildcard"
+    ],
+    "AddSpell": [
+      "add_to",
+      "auto_upgrade",
+      "path",
+      "path_end",
+      "path_exact",
+      "permission",
+      "spell"
+    ],
+    "Aggro": [
+      "clear_target",
+      "set_pathfinder",
+      "speed_modifier"
+    ],
+    "AirSupply": [
+      "air"
+    ],
+    "AllEntities": [
+      "target_all_worlds"
+    ],
+    "Animate": [],
+    "ApplyCooldown": [
+      "bypass_reduction",
+      "clear",
+      "duration",
+      "exclude_spells",
+      "reduce",
+      "spells",
+      "tags",
+      "target_caster"
+    ],
+    "AreaOfEffect": [
+      "ignore_modified",
+      "min_radius",
+      "radius",
+      "random_choose",
+      "target_count",
+      "target_source",
+      "y_radius"
+    ],
+    "AreaOfEffectCloud": [],
+    "ArmorStandProjectile": [
+      "active_wand",
+      "armor_stand_arms",
+      "armor_stand_baseplate",
+      "armor_stand_gravity",
+      "armor_stand_invisible",
+      "armor_stand_marker",
+      "armor_stand_small",
+      "body_transform",
+      "boots_item",
+      "chestplate_item",
+      "head_transform",
+      "helmet_item",
+      "left_leg_transform",
+      "leggings_item",
+      "mount_wand",
+      "orient_head",
+      "orient_right_arm",
+      "reactivate_wand",
+      "right_arm_item",
+      "right_arm_transform",
+      "right_leg_transform",
+      "unbreakable_items",
+      "use_brush",
+      "visible_delay_ticks",
+      "wand_slot"
+    ],
+    "Ascend": [],
+    "Asynchronous": [],
+    "BlockSearch": [
+      "direction"
+    ],
+    "Bonemeal": [],
+    "Book": [
+      "author",
+      "book_item",
+      "give_book",
+      "pages",
+      "title",
+      "virtual_book"
+    ],
+    "BossBar": [
+      "bar_progress",
+      "show_target",
+      "update_title"
+    ],
+    "BreakBlock": [
+      "break_durability",
+      "break_material",
+      "break_percent",
+      "durability_max_distance"
+    ],
+    "Brush": [
+      "brush",
+      "brushes",
+      "brushmod",
+      "replacements",
+      "sample"
+    ],
+    "BrushSelect": [
+      "allow_absorbing"
+    ],
+    "Burn": [
+      "all_fire",
+      "fire_type",
+      "melt_ice"
+    ],
+    "Cancel": [
+      "current",
+      "force",
+      "spell",
+      "spells"
+    ],
+    "Capture": [
+      "min_health",
+      "remove"
+    ],
+    "Cast": [
+      "as_target",
+      "console",
+      "cooldown_free",
+      "cost_free",
+      "spell",
+      "spell_parameters"
+    ],
+    "CastResult": [],
+    "ChangeBiome": [
+      "biome",
+      "biome_replacements"
+    ],
+    "ChangeContext": [
+      "destructible_materials",
+      "indestructible_materials",
+      "orient_pitch",
+      "persist_caster",
+      "persist_target",
+      "random_source_offset",
+      "random_target_offset",
+      "relative_source_offset",
+      "relative_target_offset",
+      "source_at_target",
+      "source_direction",
+      "source_direction_at_target",
+      "source_direction_is_target",
+      "source_direction_offset",
+      "source_direction_speed",
+      "source_is_caster",
+      "source_is_target",
+      "source_offset",
+      "source_pitch",
+      "source_pitch_max",
+      "source_pitch_min",
+      "source_pitch_offset",
+      "source_relative_direction_pitch_offset",
+      "source_relative_direction_yaw_offset",
+      "source_use_movement_direction",
+      "source_yaw",
+      "source_yaw_offset",
+      "swap_source_and_target",
+      "target_attachment",
+      "target_caster",
+      "target_direction",
+      "target_direction_offset",
+      "target_direction_speed",
+      "target_entity",
+      "target_offset",
+      "target_pitch_offset",
+      "target_relative_direction_pitch_offset",
+      "target_relative_direction_yaw_offset",
+      "target_self",
+      "target_snap",
+      "target_use_movement_direction",
+      "target_yaw_offset",
+      "use_parent_source_entity",
+      "use_parent_source_location",
+      "use_parent_target_entity",
+      "use_parent_target_location",
+      "use_target_mage"
+    ],
+    "ChangeParameters": [],
+    "ChangeServer": [
+      "server"
+    ],
+    "ChangeWorld": [
+      "load",
+      "scale",
+      "target_world",
+      "worlds"
+    ],
+    "Chat": [
+      "message",
+      "randomized_messages"
+    ],
+    "CheckBedrockForm": [
+      "button1_key",
+      "button2_key",
+      "message_key",
+      "title_key"
+    ],
+    "CheckBlock": [
+      "allow_brush",
+      "allowed",
+      "biome_actions",
+      "biomes",
+      "block_actions",
+      "check_permission",
+      "direction",
+      "direction_count",
+      "not_biomes",
+      "not_brush",
+      "set_target",
+      "source_location",
+      "use_target"
+    ],
+    "CheckChatClick": [
+      "Hover_message_key",
+      "click_message_key",
+      "click_template_key",
+      "message_key"
+    ],
+    "CheckEntity": [
+      "allow_caster",
+      "allowed_entities",
+      "allowed_entity_classes",
+      "denied_entities",
+      "denied_entity_classes",
+      "on_fire",
+      "on_ground",
+      "only_caster",
+      "owned",
+      "owner",
+      "stay"
+    ],
+    "CheckHealth": [
+      "as_percentages",
+      "full_health",
+      "max_health",
+      "min_health"
+    ],
+    "CheckInventory": [
+      "item",
+      "material_only",
+      "slot",
+      "target_block",
+      "target_caster"
+    ],
+    "CheckLore": [
+      "pattern"
+    ],
+    "CheckMana": [
+      "require_mana",
+      "require_mana_empty",
+      "require_mana_not_full",
+      "require_mana_percentage"
+    ],
+    "CheckModifiers": [
+      "blocked",
+      "required"
+    ],
+    "CheckPotionEffects": [],
+    "CheckRequirements": [
+      "send_message",
+      "use_target"
+    ],
+    "CheckTrigger": [
+      "trigger"
+    ],
+    "CheckVelocity": [
+      "max_speed",
+      "min_speed"
+    ],
+    "ClearChat": [],
+    "ClearFallProtection": [],
+    "ClearInventory": [],
+    "ColorItem": [
+      "color",
+      "color_wand",
+      "slot",
+      "slots"
+    ],
+    "Command": [
+      "as_target",
+      "command",
+      "commands",
+      "console",
+      "equation",
+      "escape_sequence",
+      "local_echo",
+      "modal",
+      "op",
+      "timeout",
+      "variables"
+    ],
+    "Commit": [
+      "commit_all"
+    ],
+    "ConeOfEffect": [
+      "range",
+      "target_count"
+    ],
+    "Count": [],
+    "Cover": [
+      "target_above",
+      "target_highest"
+    ],
+    "CreateAutomaton": [
+      "automaton",
+      "automaton_parameters"
+    ],
+    "CreateField": [
+      "field_rent",
+      "field_rent_period",
+      "field_rent_sign_direction",
+      "field_type"
+    ],
+    "CreateMagicBlock": [
+      "block_parameters",
+      "template"
+    ],
+    "CreateNPC": [
+      "key_item",
+      "key_overrides",
+      "name",
+      "npc_parameters",
+      "npc_template"
+    ],
+    "CreatePlot": [
+      "price"
+    ],
+    "Cure": [],
+    "CustomProjectile": [
+      "attach_duration",
+      "block_hit_count",
+      "break_blocks",
+      "breakable_size",
+      "bypass_backfire",
+      "drag",
+      "entity_hit_count",
+      "gravity",
+      "headshot_effects",
+      "hit_count",
+      "hit_effects",
+      "hit_on_miss",
+      "hit_requires_entity",
+      "ignore_hit_entities",
+      "ignore_targeting",
+      "interval",
+      "lifetime",
+      "min_block_range",
+      "min_entity_range",
+      "miss_effects",
+      "pitch_max",
+      "pitch_min",
+      "plan",
+      "projectile_effects",
+      "projectile_effects_use_target",
+      "projectile_follow_player",
+      "range",
+      "reflect_count",
+      "reflect_reorient",
+      "reflect_reset_distance_traveled",
+      "reflect_target_caster",
+      "reflect_track_range",
+      "reflect_track_target",
+      "reorient",
+      "reset_time_on_path_change",
+      "return_offset",
+      "return_relative_offset",
+      "return_to_caster",
+      "reverse",
+      "speed",
+      "spread",
+      "spread_movement",
+      "spread_movement_max",
+      "start",
+      "target_breakables",
+      "target_self",
+      "target_self_timeout",
+      "tick_effects",
+      "tick_size",
+      "track_range",
+      "track_speed",
+      "track_target",
+      "update_launch_location",
+      "velocity",
+      "velocity_transform"
+    ],
+    "CycleBlock": [
+      "cycle_colors",
+      "cycle_variants",
+      "material_sets",
+      "materials"
+    ],
+    "CycleEntity": [],
+    "Cylinder": [],
+    "Damage": [
+      "adaptive_knockback_resistance",
+      "cancel_on_kill_target",
+      "critical_damage_multiplier",
+      "critical_effects",
+      "critical_probability",
+      "damage",
+      "damage_max_distance",
+      "damage_min_distance",
+      "damage_multiplier",
+      "damage_source_location",
+      "damage_type",
+      "elemental_damage",
+      "entity_damage",
+      "invert_distance",
+      "knockback_resistance",
+      "magic",
+      "magic_damage",
+      "magic_entity_damage",
+      "min_damage",
+      "no_damage_ticks",
+      "percentage",
+      "physical",
+      "player_damage",
+      "set_last_damaged",
+      "set_last_damaged_by"
+    ],
+    "Deactivate": [
+      "deactivate_self"
+    ],
+    "Debugger": [
+      "check",
+      "check_block",
+      "check_brain",
+      "force",
+      "level"
+    ],
+    "Delay": [
+      "delay",
+      "warmup"
+    ],
+    "Descend": [],
+    "DisablePhysics": [
+      "duration",
+      "physics_buffer",
+      "undo"
+    ],
+    "Disarm": [
+      "display_name",
+      "keep_in_inventory",
+      "max_slot",
+      "min_slot"
+    ],
+    "Disc": [],
+    "Disguise": [
+      "disguise"
+    ],
+    "Door": [
+      "type"
+    ],
+    "Drop": [
+      "drop_count",
+      "falling",
+      "give_to_caster",
+      "tool"
+    ],
+    "DropItem": [
+      "item"
+    ],
+    "DropSkull": [
+      "drop_at_source"
+    ],
+    "Electrify": [
+      "electrify"
+    ],
+    "EnchantWand": [
+      "levels",
+      "path",
+      "path_exact",
+      "requires",
+      "use_xp"
+    ],
+    "EntityAnimation": [
+      "animation"
+    ],
+    "EntityProjectile": [
+      "allow_replacement",
+      "apply_velocity",
+      "location_offset",
+      "no_target",
+      "orient",
+      "projectile_potion_effects",
+      "relative_location_offset",
+      "spawn_reason",
+      "teleport",
+      "type",
+      "variant",
+      "velocity_offset"
+    ],
+    "EntitySelect": [
+      "default_icon",
+      "limit",
+      "radius"
+    ],
+    "Equation": [
+      "iterations",
+      "iterations2",
+      "orient",
+      "orient_pitch",
+      "reorient",
+      "use_target_location",
+      "variable",
+      "variable2",
+      "x2_equation",
+      "x_equation",
+      "y2_equation",
+      "y_equation",
+      "z2_equation",
+      "z_equation"
+    ],
+    "EquationVolume": [
+      "brushes",
+      "brushmod",
+      "equation"
+    ],
+    "Equip": [
+      "armor_slot",
+      "enchantments",
+      "item",
+      "material",
+      "replace_item",
+      "return_on_finish",
+      "slot",
+      "temporary",
+      "unbreakable",
+      "use_item"
+    ],
+    "Explosion": [
+      "break_blocks",
+      "fire",
+      "size"
+    ],
+    "FakeBlock": [
+      "player_radius"
+    ],
+    "FallProtection": [
+      "duration",
+      "protection_count"
+    ],
+    "Feed": [
+      "exhaustion",
+      "feed",
+      "food_level",
+      "saturation"
+    ],
+    "FillWand": [
+      "max_level"
+    ],
+    "FindMagicBlocks": [
+      "radius",
+      "target_all_worlds",
+      "target_block_mage",
+      "target_magic_blocks"
+    ],
+    "FindTileEntities": [
+      "radius"
+    ],
+    "Firework": [
+      "color",
+      "color2",
+      "dy_offset",
+      "expected_lifespan",
+      "firework",
+      "flicker",
+      "launch",
+      "power",
+      "silent",
+      "speed",
+      "start",
+      "ticks_flown",
+      "trail",
+      "use_wand_color"
+    ],
+    "Flower": [
+      "flowers",
+      "grow_on",
+      "tall_flowers"
+    ],
+    "Fly": [
+      "duration",
+      "max_height",
+      "max_height_above_ground",
+      "speed"
+    ],
+    "Freeze": [
+      "freeze_fire",
+      "freeze_lava",
+      "freeze_water",
+      "ice",
+      "pile_snow",
+      "snowable"
+    ],
+    "GiveCurrency": [
+      "amount",
+      "currency"
+    ],
+    "GiveItem": [
+      "item",
+      "item_count",
+      "lore",
+      "max_item_count",
+      "name",
+      "permission",
+      "requires",
+      "stack_size"
+    ],
+    "GiveKit": [
+      "kit"
+    ],
+    "Glide": [
+      "require_elytra",
+      "wait_for_landing"
+    ],
+    "GrowEntity": [
+      "skeletons"
+    ],
+    "Hat": [],
+    "Heal": [
+      "amount",
+      "heal_max_distance",
+      "percentage"
+    ],
+    "Ignite": [
+      "duration"
+    ],
+    "Interval": [
+      "duration",
+      "interval"
+    ],
+    "Inventory": [
+      "target",
+      "title",
+      "type"
+    ],
+    "InventoryClose": [],
+    "ItemShop": [
+      "items"
+    ],
+    "Kill": [
+      "magic_damage"
+    ],
+    "Ledger": [
+      "ignore_currencies",
+      "show_currencies"
+    ],
+    "Light": [
+      "async",
+      "level",
+      "min_distance",
+      "undo_previous",
+      "update"
+    ],
+    "Lightning": [
+      "effect_only"
+    ],
+    "Line": [
+      "increment_data",
+      "reorient",
+      "require_block",
+      "reverse",
+      "size",
+      "start",
+      "start_at_target"
+    ],
+    "LineOfEffect": [
+      "ignore_modified",
+      "radius",
+      "random_choose",
+      "range",
+      "range_back",
+      "range_front",
+      "target_count",
+      "target_source"
+    ],
+    "Lock": [
+      "key_description",
+      "key_icon",
+      "key_name",
+      "override",
+      "type"
+    ],
+    "LowerBlock": [
+      "faces",
+      "slopes",
+      "vertical_range"
+    ],
+    "Message": [
+      "dialog_format",
+      "equation",
+      "fade_in",
+      "fade_out",
+      "message",
+      "message_key",
+      "message_target",
+      "message_type",
+      "stay",
+      "sub_message",
+      "sub_message_key"
+    ],
+    "ModelEngine": [
+      "color",
+      "custom_id",
+      "exact_match",
+      "ignore_lerp",
+      "lerp_in",
+      "lerp_out",
+      "lerp_speed",
+      "model_action",
+      "model_id",
+      "model_state",
+      "part_id",
+      "sub_model_id",
+      "sub_part_id"
+    ],
+    "Modifier": [
+      "add_modifiers",
+      "duration",
+      "duration_multiplier",
+      "remove_modifiers",
+      "remove_on_finish"
+    ],
+    "ModifyAttribute": [
+      "attribute",
+      "bypass_undo",
+      "modify_target",
+      "original_variable",
+      "value"
+    ],
+    "ModifyBlock": [
+      "auto_block_state",
+      "breakable",
+      "check_chunk",
+      "commit",
+      "consume",
+      "consume_variants",
+      "damage",
+      "direction",
+      "fall_damage",
+      "falling",
+      "falling_hurts",
+      "falling_probability",
+      "max_damage",
+      "physics",
+      "reflect_chance",
+      "replace_same",
+      "speed"
+    ],
+    "ModifyBreakable": [
+      "breakable",
+      "target_air"
+    ],
+    "ModifyCompass": [
+      "tracked"
+    ],
+    "ModifyCurrency": [
+      "currency",
+      "value"
+    ],
+    "ModifyEntity": [
+      "direction",
+      "dy_offset",
+      "force",
+      "no_drops",
+      "own",
+      "reason",
+      "speed",
+      "tamed"
+    ],
+    "ModifyGameMode": [
+      "game_mode"
+    ],
+    "ModifyLore": [
+      "digits",
+      "modify"
+    ],
+    "ModifyMage": [
+      "mage_class",
+      "modify_type"
+    ],
+    "ModifyMana": [
+      "fill_mana",
+      "mana"
+    ],
+    "ModifyMaxHealth": [
+      "health_scale",
+      "max_health"
+    ],
+    "ModifyNoDamageTicks": [
+      "no_damage_ticks"
+    ],
+    "ModifyNPC": [
+      "name",
+      "name_from_wand",
+      "npc_id",
+      "npc_parameters",
+      "npc_template"
+    ],
+    "ModifyParameters": [],
+    "ModifyProperties": [
+      "bypass_undo",
+      "modify",
+      "modify_target",
+      "original_variable",
+      "upgrade"
+    ],
+    "ModifyReflective": [
+      "reflect_chance"
+    ],
+    "ModifySP": [
+      "sp"
+    ],
+    "ModifyVariable": [
+      "clear",
+      "default",
+      "scope",
+      "value",
+      "variable"
+    ],
+    "ModifyWalkSpeed": [
+      "speed"
+    ],
+    "Mount": [
+      "dismount",
+      "eject"
+    ],
+    "MountArmorStand": [
+      "armor_stand_gravity",
+      "armor_stand_health",
+      "armor_stand_invisible",
+      "armor_stand_invulnerable",
+      "armor_stand_marker",
+      "armor_stand_pitch",
+      "armor_stand_reason",
+      "armor_stand_roll",
+      "armor_stand_small",
+      "find_wand",
+      "helmet_item",
+      "mount_name",
+      "mount_target",
+      "mount_untargetable",
+      "mount_wand",
+      "replacement_item"
+    ],
+    "MoveBlock": [
+      "clear_target",
+      "offset",
+      "set_target"
+    ],
+    "Multiply": [
+      "first",
+      "multiply"
+    ],
+    "Orient": [
+      "orient_target",
+      "pitch",
+      "pitch_offset",
+      "target_block",
+      "yaw",
+      "yaw_offset"
+    ],
+    "Parallel": [],
+    "Plane": [
+      "axis",
+      "brush_axis"
+    ],
+    "PlayEffects": [
+      "effect",
+      "effects",
+      "effects_count_as_cast"
+    ],
+    "PlayerSelect": [
+      "cross_world",
+      "ignore_key",
+      "name_template",
+      "title_key"
+    ],
+    "PlayRecord": [
+      "records"
+    ],
+    "PlaySound": [
+      "effects_count_as_cast",
+      "pitch",
+      "radius",
+      "sound",
+      "sound_pitch",
+      "sound_volume",
+      "sounds_count_as_cast",
+      "volume"
+    ],
+    "PotionEffect": [
+      "add_effects",
+      "amplifier",
+      "duration",
+      "duration_multiplier",
+      "effects_ambient",
+      "effects_particles",
+      "potion_effects",
+      "remove_effects",
+      "remove_on_finish"
+    ],
+    "PowerBlock": [
+      "physics"
+    ],
+    "Probability": [
+      "probability"
+    ],
+    "Projectile": [
+      "arrow_damage",
+      "break_blocks",
+      "color",
+      "count",
+      "damage",
+      "fire",
+      "pickup",
+      "projectile",
+      "size",
+      "speed",
+      "spread",
+      "start",
+      "tick_increase"
+    ],
+    "RaiseBlock": [
+      "consume",
+      "consume_variants",
+      "faces",
+      "max_height",
+      "slopes",
+      "vertical_range"
+    ],
+    "Random": [],
+    "Recall": [
+      "addfriend",
+      "allow_all",
+      "allow_cross_world",
+      "allow_magic_warps",
+      "allow_marker",
+      "commands",
+      "confirm_marker",
+      "delay",
+      "friend_key",
+      "group",
+      "icon_death",
+      "lock",
+      "marker_count",
+      "marker_key",
+      "marker_maintain_direction",
+      "marker_requires_build",
+      "options",
+      "placeholder_icon",
+      "protection_duration",
+      "removefriend",
+      "require_target_permission",
+      "show_unavailable",
+      "teleport",
+      "teleport_target",
+      "title",
+      "title_key",
+      "type",
+      "unavailable_warp_description",
+      "unlock",
+      "unlock_key",
+      "warmup",
+      "warp",
+      "warps"
+    ],
+    "RectOfEffect": [
+      "ignore_modified",
+      "max",
+      "min",
+      "random_choose",
+      "target_count",
+      "target_source"
+    ],
+    "Recurse": [
+      "auto_lava",
+      "auto_snow",
+      "auto_water",
+      "checkered",
+      "debug_depth",
+      "debug_material",
+      "depth",
+      "depth_first",
+      "faces",
+      "limit",
+      "priority_faces",
+      "replace",
+      "size"
+    ],
+    "RemoveEntity": [
+      "ignore_invalid"
+    ],
+    "RemoveNPC": [
+      "npc_id"
+    ],
+    "RemoveSpell": [
+      "spell"
+    ],
+    "RemoveWand": [],
+    "RepairItem": [
+      "armor",
+      "held_item"
+    ],
+    "Repeat": [
+      "repeat"
+    ],
+    "ResetMage": [],
+    "Respawn": [],
+    "Retarget": [
+      "range"
+    ],
+    "RideEntity": [
+      "air_controllable",
+      "boost_attribute",
+      "braking",
+      "controllable",
+      "crash_braking",
+      "crash_cooldown",
+      "crash_damage",
+      "crash_dismount_speed",
+      "crash_distance",
+      "crash_effects",
+      "crash_entity_cooldown",
+      "crash_entity_damage",
+      "crash_entity_dismount_speed",
+      "crash_entity_distance",
+      "crash_entity_fov",
+      "crash_entity_speed",
+      "crash_entity_vehicle_damage",
+      "crash_into",
+      "crash_speed",
+      "crash_vehicle_damage",
+      "crash_velocity",
+      "crash_velocity_y_offset",
+      "direction_y",
+      "dismount_height",
+      "duration",
+      "duration_warning",
+      "exemption_duration",
+      "fall_protection",
+      "gravity",
+      "height_check_radius",
+      "jump_cast",
+      "jump_controllable",
+      "jump_velocity",
+      "liftoff_duration",
+      "liftoff_thrust",
+      "max_acceleration",
+      "max_ascend",
+      "max_deceleration",
+      "max_height",
+      "max_height_above_ground",
+      "max_speed",
+      "min_speed",
+      "mount_no_drops",
+      "mount_untargetable",
+      "passenger",
+      "pitch_controllable",
+      "pitch_offset",
+      "rider_untargetable",
+      "riding_effects",
+      "sneak_controllable",
+      "sound",
+      "sound_interval",
+      "sound_max_pitch",
+      "sound_max_volume",
+      "sound_min_pitch",
+      "sound_min_volume",
+      "sound_pitch",
+      "sound_volume",
+      "start_speed",
+      "steer_controllable",
+      "steer_speed",
+      "strafe_controllable",
+      "terminal_velocity",
+      "warning_effects",
+      "yaw_offset"
+    ],
+    "Ring": [],
+    "Selector": [
+      "add_options",
+      "cast_for_tags",
+      "chest_location",
+      "commands",
+      "confirm_filler",
+      "confirm_title",
+      "confirm_title_key",
+      "cost_lore",
+      "cost_modifiers",
+      "cost_type_fallback",
+      "cost_type_fallbacks",
+      "costs",
+      "earn_modifiers",
+      "earns",
+      "icon_hide_flags",
+      "icon_unbreakable",
+      "lock_classes",
+      "options",
+      "owner_uuid",
+      "required_cost_lore",
+      "required_unlock_cost_lore",
+      "title",
+      "title_key",
+      "unlock_confirm_title",
+      "unlock_confirm_title_key",
+      "unlock_cost_lore"
+    ],
+    "Serial": [],
+    "SetSpawn": [],
+    "Shop": [
+      "add_options",
+      "add_sell_shop",
+      "apply_lore_to_item",
+      "apply_name_to_item",
+      "buy_icon",
+      "check_max_spells",
+      "cost_type",
+      "sell",
+      "sell_icon",
+      "show_extra_spells",
+      "show_free",
+      "show_missing_requirements",
+      "show_no_permission",
+      "show_path_spells",
+      "show_required_spells",
+      "show_uncastable",
+      "spells"
+    ],
+    "ShrinkBlock": [],
+    "ShrinkEntity": [
+      "drop_skull",
+      "skeletons"
+    ],
+    "Simulate": [],
+    "SkillSelector": [
+      "page"
+    ],
+    "Skip": [
+      "repeat_skip",
+      "skip",
+      "until"
+    ],
+    "SpawnEntity": [
+      "allow_replacement",
+      "direction",
+      "dy_offset",
+      "entity_parameters",
+      "entity_types",
+      "force",
+      "loot",
+      "on_block",
+      "owned",
+      "parameterize_name",
+      "reason",
+      "repeat_random",
+      "set_source",
+      "set_target",
+      "speed",
+      "tamed",
+      "type",
+      "use_wand_name",
+      "wait_for_death"
+    ],
+    "SpellProgress": [],
+    "SpellShop": [
+      "allow_locked",
+      "show_extra_spells",
+      "show_free",
+      "show_path_spells",
+      "show_required_spells",
+      "show_upgrades",
+      "spells",
+      "upgrade_requires_casts"
+    ],
+    "Sphere": [],
+    "Spread": [
+      "center_probability",
+      "outer_probability",
+      "pitch_max",
+      "probability",
+      "radius",
+      "yaw_max"
+    ],
+    "StashWand": [
+      "return_on_finish"
+    ],
+    "Stop": [],
+    "StopSound": [
+      "sound"
+    ],
+    "SuperProtection": [
+      "duration"
+    ],
+    "TakeCosts": [
+      "costs",
+      "item",
+      "item_cost"
+    ],
+    "TakeItem": [
+      "display_name",
+      "full_stack",
+      "give_to_caster",
+      "item",
+      "take_wand"
+    ],
+    "Tame": [
+      "own",
+      "persist"
+    ],
+    "Teleport": [
+      "allow_passthrough",
+      "direct",
+      "ledge_range",
+      "passthrough_range",
+      "round_up",
+      "same_block",
+      "teleport_target",
+      "use_target_location"
+    ],
+    "TeleportNPC": [
+      "npc_id"
+    ],
+    "ThrowBlock": [
+      "consume",
+      "consume_variants",
+      "damage",
+      "fall_damage",
+      "hurts",
+      "max_damage",
+      "speed",
+      "speed_max",
+      "speed_min"
+    ],
+    "ThrowItem": [
+      "age_items",
+      "item",
+      "pickup_delay",
+      "speed",
+      "speed_max",
+      "speed_min",
+      "temporary",
+      "throw_wand",
+      "unbreakable"
+    ],
+    "TileEntities": [
+      "target_all_worlds"
+    ],
+    "Time": [
+      "cycle_moon_phase",
+      "time"
+    ],
+    "TNT": [
+      "break_blocks",
+      "count",
+      "fire",
+      "fuse",
+      "size",
+      "tnt_velocity"
+    ],
+    "Torch": [
+      "allow_glowstone",
+      "allow_sea_lantern",
+      "glowstone_torch",
+      "not_attachable",
+      "redstone_torch"
+    ],
+    "Tree": [
+      "biomes",
+      "require_sapling",
+      "type"
+    ],
+    "Trigger": [
+      "trigger"
+    ],
+    "Undo": [
+      "admin_permission",
+      "cancel",
+      "sort",
+      "target_block_timeout",
+      "target_blocks",
+      "target_caster",
+      "target_down",
+      "target_other_blocks",
+      "target_spell",
+      "target_timeout",
+      "undo_oldest",
+      "undo_to"
+    ],
+    "UpdateParameters": [],
+    "UpgradePath": [
+      "upgrade_levels"
+    ],
+    "Vanish": [
+      "vanish"
+    ],
+    "Velocity": [
+      "additive",
+      "allow_max_height",
+      "damaged",
+      "direction",
+      "exemption_duration",
+      "invert_distance",
+      "item_speed",
+      "living_entity_speed",
+      "max_altitude",
+      "max_magnitude",
+      "max_speed",
+      "min_speed",
+      "push",
+      "speed",
+      "velocity_max_distance",
+      "y_offset"
+    ],
+    "Volume": [
+      "center_probability",
+      "center_x",
+      "center_y",
+      "center_z",
+      "check_chunk",
+      "orient",
+      "orient_pitch",
+      "orient_pitch_snap",
+      "orient_snap",
+      "outer_probability",
+      "probability",
+      "radius",
+      "radius_padding",
+      "reorient",
+      "replace",
+      "thickness",
+      "use_brush_size",
+      "volume_type",
+      "x_size",
+      "y_size",
+      "z_size"
+    ],
+    "WandInstructions": [
+      "message_target"
+    ],
+    "Warp": [
+      "warp"
+    ],
+    "Wear": [],
+    "Weather": [
+      "player_weather",
+      "weather"
+    ],
+    "While": [
+      "interval"
+    ]
+  },
+  "inherits": {
+    "Absorb": [
+      "BaseSpellAction"
+    ],
+    "AddSpell": [
+      "BaseSpellAction"
+    ],
+    "Aggro": [
+      "BaseSpellAction"
+    ],
+    "AirSupply": [
+      "BaseSpellAction"
+    ],
+    "AllEntities": [
+      "CompoundEntityAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Animate": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ApplyCooldown": [
+      "BaseSpellAction"
+    ],
+    "AreaOfEffect": [
+      "CompoundEntityAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "AreaOfEffectCloud": [
+      "SpawnEntityAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ArmorStandProjectile": [
+      "EntityProjectileAction",
+      "CustomProjectileAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Ascend": [
+      "BaseTeleportAction",
+      "BaseSpellAction"
+    ],
+    "Asynchronous": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "BlockSearch": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Bonemeal": [
+      "BaseSpellAction"
+    ],
+    "Book": [
+      "BaseSpellAction"
+    ],
+    "BossBar": [
+      "BaseSpellAction"
+    ],
+    "BreakBlock": [
+      "ModifyBlockAction",
+      "BaseSpellAction"
+    ],
+    "Brush": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "BrushSelect": [
+      "BaseSpellAction"
+    ],
+    "Burn": [
+      "BaseSpellAction"
+    ],
+    "Cancel": [
+      "BaseSpellAction"
+    ],
+    "Capture": [
+      "BaseSpellAction"
+    ],
+    "Cast": [
+      "BaseSpellAction"
+    ],
+    "CastResult": [
+      "BaseSpellAction"
+    ],
+    "ChangeBiome": [
+      "BaseSpellAction"
+    ],
+    "ChangeContext": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ChangeParameters": [
+      "BaseSpellAction"
+    ],
+    "ChangeServer": [
+      "BaseSpellAction"
+    ],
+    "ChangeWorld": [
+      "BaseTeleportAction",
+      "BaseSpellAction"
+    ],
+    "Chat": [
+      "BaseSpellAction"
+    ],
+    "CheckBedrockForm": [
+      "CheckTriggerAction",
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckBlock": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckChatClick": [
+      "CheckTriggerAction",
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckEntity": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckHealth": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckInventory": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckLore": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckMana": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckModifiers": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckPotionEffects": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckRequirements": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckTrigger": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CheckVelocity": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ClearChat": [
+      "BaseSpellAction"
+    ],
+    "ClearFallProtection": [
+      "BaseSpellAction"
+    ],
+    "ClearInventory": [
+      "BaseSpellAction"
+    ],
+    "ColorItem": [
+      "BaseSpellAction"
+    ],
+    "Command": [
+      "BaseSpellAction"
+    ],
+    "Commit": [
+      "BaseSpellAction"
+    ],
+    "ConeOfEffect": [
+      "CompoundEntityAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Count": [
+      "BaseSpellAction"
+    ],
+    "Cover": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CreateAutomaton": [
+      "CreateMagicBlockAction",
+      "BaseSpellAction"
+    ],
+    "CreateField": [
+      "ModifyBlockAction",
+      "BaseSpellAction"
+    ],
+    "CreateMagicBlock": [
+      "BaseSpellAction"
+    ],
+    "CreateNPC": [
+      "BaseSpellAction"
+    ],
+    "CreatePlot": [
+      "BaseSpellAction"
+    ],
+    "Cure": [
+      "BaseSpellAction"
+    ],
+    "CustomProjectile": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "CycleBlock": [
+      "BaseSpellAction"
+    ],
+    "CycleEntity": [
+      "BaseSpellAction"
+    ],
+    "Cylinder": [
+      "VolumeAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Damage": [
+      "BaseSpellAction"
+    ],
+    "Deactivate": [
+      "BaseSpellAction"
+    ],
+    "Debugger": [
+      "BaseSpellAction"
+    ],
+    "Delay": [
+      "BaseSpellAction"
+    ],
+    "Descend": [
+      "BaseTeleportAction",
+      "BaseSpellAction"
+    ],
+    "DisablePhysics": [
+      "BaseSpellAction"
+    ],
+    "Disarm": [
+      "BaseSpellAction"
+    ],
+    "Disc": [
+      "PlaneAction",
+      "VolumeAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Disguise": [
+      "BaseSpellAction"
+    ],
+    "Door": [
+      "BaseSpellAction"
+    ],
+    "Drop": [
+      "BaseSpellAction"
+    ],
+    "DropItem": [
+      "BaseSpellAction"
+    ],
+    "DropSkull": [
+      "BaseSpellAction"
+    ],
+    "Electrify": [
+      "BaseSpellAction"
+    ],
+    "EnchantWand": [
+      "BaseSpellAction"
+    ],
+    "EntityAnimation": [
+      "BaseSpellAction"
+    ],
+    "EntityProjectile": [
+      "CustomProjectileAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "EntitySelect": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Equation": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "EquationVolume": [
+      "VolumeAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Equip": [
+      "BaseSpellAction"
+    ],
+    "Explosion": [
+      "BaseSpellAction"
+    ],
+    "FakeBlock": [
+      "BaseSpellAction"
+    ],
+    "FallProtection": [
+      "BaseSpellAction"
+    ],
+    "Feed": [
+      "BaseSpellAction"
+    ],
+    "FillWand": [
+      "BaseSpellAction"
+    ],
+    "FindMagicBlocks": [
+      "CompoundLocationAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "FindTileEntities": [
+      "CompoundLocationAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Firework": [
+      "BaseProjectileAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Flower": [
+      "BaseSpellAction"
+    ],
+    "Fly": [
+      "BaseSpellAction"
+    ],
+    "Freeze": [
+      "BaseSpellAction"
+    ],
+    "GiveCurrency": [
+      "BaseSpellAction"
+    ],
+    "GiveItem": [
+      "BaseSpellAction"
+    ],
+    "GiveKit": [
+      "BaseSpellAction"
+    ],
+    "Glide": [
+      "BaseSpellAction"
+    ],
+    "GrowEntity": [
+      "BaseSpellAction"
+    ],
+    "Hat": [
+      "EquipAction",
+      "BaseSpellAction"
+    ],
+    "Heal": [
+      "BaseSpellAction"
+    ],
+    "Ignite": [
+      "BaseSpellAction"
+    ],
+    "Interval": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Inventory": [
+      "BaseSpellAction"
+    ],
+    "InventoryClose": [
+      "BaseSpellAction"
+    ],
+    "ItemShop": [
+      "com"
+    ],
+    "Kill": [
+      "BaseSpellAction"
+    ],
+    "Ledger": [
+      "BaseSpellAction"
+    ],
+    "Light": [
+      "BaseSpellAction"
+    ],
+    "Lightning": [
+      "BaseSpellAction"
+    ],
+    "Line": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "LineOfEffect": [
+      "CompoundEntityAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Lock": [
+      "BaseSpellAction"
+    ],
+    "LowerBlock": [
+      "BaseSpellAction"
+    ],
+    "Message": [
+      "BaseSpellAction"
+    ],
+    "ModelEngine": [
+      "BaseSpellAction"
+    ],
+    "Modifier": [
+      "BaseSpellAction"
+    ],
+    "ModifyAttribute": [
+      "BaseSpellAction"
+    ],
+    "ModifyBlock": [
+      "BaseSpellAction"
+    ],
+    "ModifyBreakable": [
+      "BaseSpellAction"
+    ],
+    "ModifyCompass": [
+      "BaseSpellAction"
+    ],
+    "ModifyCurrency": [
+      "BaseSpellAction"
+    ],
+    "ModifyEntity": [
+      "BaseSpellAction"
+    ],
+    "ModifyGameMode": [
+      "BaseSpellAction"
+    ],
+    "ModifyLore": [
+      "BaseSpellAction"
+    ],
+    "ModifyMage": [
+      "BaseSpellAction"
+    ],
+    "ModifyMana": [
+      "BaseSpellAction"
+    ],
+    "ModifyMaxHealth": [
+      "BaseSpellAction"
+    ],
+    "ModifyNoDamageTicks": [
+      "BaseSpellAction"
+    ],
+    "ModifyNPC": [
+      "BaseSpellAction"
+    ],
+    "ModifyParameters": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ModifyProperties": [
+      "BaseSpellAction"
+    ],
+    "ModifyReflective": [
+      "BaseSpellAction"
+    ],
+    "ModifySP": [
+      "BaseSpellAction"
+    ],
+    "ModifyVariable": [
+      "BaseSpellAction"
+    ],
+    "ModifyWalkSpeed": [
+      "BaseSpellAction"
+    ],
+    "Mount": [
+      "BaseSpellAction"
+    ],
+    "MountArmorStand": [
+      "RideEntityAction",
+      "BaseSpellAction"
+    ],
+    "MoveBlock": [
+      "BaseSpellAction"
+    ],
+    "Multiply": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Orient": [
+      "BaseSpellAction"
+    ],
+    "Parallel": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Plane": [
+      "VolumeAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "PlayEffects": [
+      "BaseSpellAction"
+    ],
+    "PlayerSelect": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "PlayRecord": [
+      "BaseSpellAction"
+    ],
+    "PlaySound": [
+      "BaseSpellAction"
+    ],
+    "PotionEffect": [
+      "BaseSpellAction"
+    ],
+    "PowerBlock": [
+      "BaseSpellAction"
+    ],
+    "Probability": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Projectile": [
+      "BaseProjectileAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "RaiseBlock": [
+      "BaseSpellAction"
+    ],
+    "Random": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Recall": [
+      "BaseTeleportAction",
+      "BaseSpellAction"
+    ],
+    "RectOfEffect": [
+      "CompoundEntityAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Recurse": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "RemoveEntity": [
+      "BaseSpellAction"
+    ],
+    "RemoveNPC": [
+      "BaseSpellAction"
+    ],
+    "RemoveSpell": [
+      "BaseSpellAction"
+    ],
+    "RemoveWand": [
+      "BaseSpellAction"
+    ],
+    "RepairItem": [
+      "BaseSpellAction"
+    ],
+    "Repeat": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ResetMage": [
+      "BaseSpellAction"
+    ],
+    "Respawn": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Retarget": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "RideEntity": [
+      "BaseSpellAction"
+    ],
+    "Ring": [
+      "DiscAction",
+      "PlaneAction",
+      "VolumeAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Selector": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Serial": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "SetSpawn": [
+      "BaseSpellAction"
+    ],
+    "Shop": [
+      "SelectorAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ShrinkBlock": [
+      "BaseSpellAction"
+    ],
+    "ShrinkEntity": [
+      "DamageAction",
+      "BaseSpellAction"
+    ],
+    "Simulate": [
+      "BaseSpellAction"
+    ],
+    "SkillSelector": [
+      "BaseSpellAction"
+    ],
+    "Skip": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "SpawnEntity": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "SpellProgress": [
+      "BaseSpellAction"
+    ],
+    "SpellShop": [
+      "com"
+    ],
+    "Sphere": [
+      "VolumeAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Spread": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "StashWand": [
+      "BaseSpellAction"
+    ],
+    "Stop": [
+      "BaseSpellAction"
+    ],
+    "StopSound": [
+      "BaseSpellAction"
+    ],
+    "SuperProtection": [
+      "BaseSpellAction"
+    ],
+    "TakeCosts": [
+      "CheckAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "TakeItem": [
+      "BaseSpellAction"
+    ],
+    "Tame": [
+      "BaseSpellAction"
+    ],
+    "Teleport": [
+      "BaseTeleportAction",
+      "BaseSpellAction"
+    ],
+    "TeleportNPC": [
+      "BaseSpellAction"
+    ],
+    "ThrowBlock": [
+      "BaseProjectileAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "ThrowItem": [
+      "BaseProjectileAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "TileEntities": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Time": [
+      "BaseSpellAction"
+    ],
+    "TNT": [
+      "BaseProjectileAction",
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Torch": [
+      "BaseSpellAction"
+    ],
+    "Tree": [
+      "BaseSpellAction"
+    ],
+    "Trigger": [
+      "BaseSpellAction"
+    ],
+    "Undo": [
+      "BaseSpellAction"
+    ],
+    "UpdateParameters": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "UpgradePath": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "Vanish": [
+      "BaseSpellAction"
+    ],
+    "Velocity": [
+      "BaseSpellAction"
+    ],
+    "Volume": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ],
+    "WandInstructions": [
+      "BaseSpellAction"
+    ],
+    "Warp": [
+      "BaseTeleportAction",
+      "BaseSpellAction"
+    ],
+    "Wear": [
+      "EquipAction",
+      "BaseSpellAction"
+    ],
+    "Weather": [
+      "BaseSpellAction"
+    ],
+    "While": [
+      "CompoundAction",
+      "BaseSpellAction"
+    ]
+  },
+  "params_by_class": {
+    "ActionContext": [
+      "parameters"
+    ],
+    "ActionHandler": [],
+    "ActionHandlerContext": [],
+    "BaseProjectileAction": [
+      "hit_effects",
+      "lifetime",
+      "projectile_effects",
+      "projectile_effects_use_target",
+      "set_target",
+      "track_projectile"
+    ],
+    "BaseShopAction": [
+      "apply_to_caster",
+      "apply_to_wand",
+      "auto_close",
+      "auto_upgrade",
+      "cast_spells",
+      "confirm",
+      "confirm_filler",
+      "filter_bound",
+      "path",
+      "path_end",
+      "path_exact",
+      "permission",
+      "put_in_hand",
+      "require_template",
+      "require_wand",
+      "scale",
+      "sell",
+      "show_active_icons",
+      "upgrade_levels",
+      "use_items",
+      "use_sp",
+      "use_xp",
+      "worth_item"
+    ],
+    "BaseSpellAction": [],
+    "BaseTeleportAction": [
+      "keep_velocity",
+      "maintain_direction",
+      "prevent_fall",
+      "require_build",
+      "require_exit",
+      "safe",
+      "teleport_vehicle",
+      "vertical_range"
+    ],
+    "CastContext": [],
+    "CheckAction": [
+      "invert",
+      "timeout"
+    ],
+    "CompoundAction": [
+      "stop_on_success"
+    ],
+    "CompoundEntityAction": [
+      "sort"
+    ],
+    "CompoundLocationAction": [
+      "target_count"
+    ],
+    "NamedActionResolver": [],
+    "RestrictedAction": [],
+    "AbsorbAction": [
+      "wildcard"
+    ],
+    "AddSpellAction": [
+      "add_to",
+      "auto_upgrade",
+      "path",
+      "path_end",
+      "path_exact",
+      "permission",
+      "spell"
+    ],
+    "AggroAction": [
+      "clear_target",
+      "set_pathfinder",
+      "speed_modifier"
+    ],
+    "AirSupplyAction": [
+      "air"
+    ],
+    "AllEntitiesAction": [
+      "target_all_worlds"
+    ],
+    "AnimateAction": [],
+    "ApplyCooldownAction": [
+      "bypass_reduction",
+      "clear",
+      "duration",
+      "exclude_spells",
+      "reduce",
+      "spells",
+      "tags",
+      "target_caster"
+    ],
+    "AreaOfEffectAction": [
+      "ignore_modified",
+      "min_radius",
+      "radius",
+      "random_choose",
+      "target_count",
+      "target_source",
+      "y_radius"
+    ],
+    "AreaOfEffectCloudAction": [],
+    "ArmorStandProjectileAction": [
+      "active_wand",
+      "armor_stand_arms",
+      "armor_stand_baseplate",
+      "armor_stand_gravity",
+      "armor_stand_invisible",
+      "armor_stand_marker",
+      "armor_stand_small",
+      "body_transform",
+      "boots_item",
+      "chestplate_item",
+      "head_transform",
+      "helmet_item",
+      "left_leg_transform",
+      "leggings_item",
+      "mount_wand",
+      "orient_head",
+      "orient_right_arm",
+      "reactivate_wand",
+      "right_arm_item",
+      "right_arm_transform",
+      "right_leg_transform",
+      "unbreakable_items",
+      "use_brush",
+      "visible_delay_ticks",
+      "wand_slot"
+    ],
+    "AscendAction": [],
+    "AsynchronousAction": [],
+    "BlockSearchAction": [
+      "direction"
+    ],
+    "BonemealAction": [],
+    "BookAction": [
+      "author",
+      "book_item",
+      "give_book",
+      "pages",
+      "title",
+      "virtual_book"
+    ],
+    "BossBarAction": [
+      "bar_progress",
+      "show_target",
+      "update_title"
+    ],
+    "BreakBlockAction": [
+      "break_durability",
+      "break_material",
+      "break_percent",
+      "durability_max_distance"
+    ],
+    "BrushAction": [
+      "brush",
+      "brushes",
+      "brushmod",
+      "replacements",
+      "sample"
+    ],
+    "BrushSelectAction": [
+      "allow_absorbing"
+    ],
+    "BurnAction": [
+      "all_fire",
+      "fire_type",
+      "melt_ice"
+    ],
+    "CancelAction": [
+      "current",
+      "force",
+      "spell",
+      "spells"
+    ],
+    "CaptureAction": [
+      "min_health",
+      "remove"
+    ],
+    "CastAction": [
+      "as_target",
+      "console",
+      "cooldown_free",
+      "cost_free",
+      "spell",
+      "spell_parameters"
+    ],
+    "CastResultAction": [],
+    "ChangeBiomeAction": [
+      "biome",
+      "biome_replacements"
+    ],
+    "ChangeContextAction": [
+      "destructible_materials",
+      "indestructible_materials",
+      "orient_pitch",
+      "persist_caster",
+      "persist_target",
+      "random_source_offset",
+      "random_target_offset",
+      "relative_source_offset",
+      "relative_target_offset",
+      "source_at_target",
+      "source_direction",
+      "source_direction_at_target",
+      "source_direction_is_target",
+      "source_direction_offset",
+      "source_direction_speed",
+      "source_is_caster",
+      "source_is_target",
+      "source_offset",
+      "source_pitch",
+      "source_pitch_max",
+      "source_pitch_min",
+      "source_pitch_offset",
+      "source_relative_direction_pitch_offset",
+      "source_relative_direction_yaw_offset",
+      "source_use_movement_direction",
+      "source_yaw",
+      "source_yaw_offset",
+      "swap_source_and_target",
+      "target_attachment",
+      "target_caster",
+      "target_direction",
+      "target_direction_offset",
+      "target_direction_speed",
+      "target_entity",
+      "target_offset",
+      "target_pitch_offset",
+      "target_relative_direction_pitch_offset",
+      "target_relative_direction_yaw_offset",
+      "target_self",
+      "target_snap",
+      "target_use_movement_direction",
+      "target_yaw_offset",
+      "use_parent_source_entity",
+      "use_parent_source_location",
+      "use_parent_target_entity",
+      "use_parent_target_location",
+      "use_target_mage"
+    ],
+    "ChangeParametersAction": [],
+    "ChangeServerAction": [
+      "server"
+    ],
+    "ChangeWorldAction": [
+      "load",
+      "scale",
+      "target_world",
+      "worlds"
+    ],
+    "ChatAction": [
+      "message",
+      "randomized_messages"
+    ],
+    "CheckBedrockFormAction": [
+      "button1_key",
+      "button2_key",
+      "message_key",
+      "title_key"
+    ],
+    "CheckBlockAction": [
+      "allow_brush",
+      "allowed",
+      "biome_actions",
+      "biomes",
+      "block_actions",
+      "check_permission",
+      "direction",
+      "direction_count",
+      "not_biomes",
+      "not_brush",
+      "set_target",
+      "source_location",
+      "use_target"
+    ],
+    "CheckChatClickAction": [
+      "Hover_message_key",
+      "click_message_key",
+      "click_template_key",
+      "message_key"
+    ],
+    "CheckEntityAction": [
+      "allow_caster",
+      "allowed_entities",
+      "allowed_entity_classes",
+      "denied_entities",
+      "denied_entity_classes",
+      "on_fire",
+      "on_ground",
+      "only_caster",
+      "owned",
+      "owner",
+      "stay"
+    ],
+    "CheckHealthAction": [
+      "as_percentages",
+      "full_health",
+      "max_health",
+      "min_health"
+    ],
+    "CheckInventoryAction": [
+      "item",
+      "material_only",
+      "slot",
+      "target_block",
+      "target_caster"
+    ],
+    "CheckLoreAction": [
+      "pattern"
+    ],
+    "CheckManaAction": [
+      "require_mana",
+      "require_mana_empty",
+      "require_mana_not_full",
+      "require_mana_percentage"
+    ],
+    "CheckModifiersAction": [
+      "blocked",
+      "required"
+    ],
+    "CheckPotionEffectsAction": [],
+    "CheckRequirementsAction": [
+      "send_message",
+      "use_target"
+    ],
+    "CheckTriggerAction": [
+      "trigger"
+    ],
+    "CheckVelocityAction": [
+      "max_speed",
+      "min_speed"
+    ],
+    "ClearChatAction": [],
+    "ClearFallProtectionAction": [],
+    "ClearInventoryAction": [],
+    "ColorItemAction": [
+      "color",
+      "color_wand",
+      "slot",
+      "slots"
+    ],
+    "CommandAction": [
+      "as_target",
+      "command",
+      "commands",
+      "console",
+      "equation",
+      "escape_sequence",
+      "local_echo",
+      "modal",
+      "op",
+      "timeout",
+      "variables"
+    ],
+    "CommitAction": [
+      "commit_all"
+    ],
+    "ConeOfEffectAction": [
+      "range",
+      "target_count"
+    ],
+    "CountAction": [],
+    "CoverAction": [
+      "target_above",
+      "target_highest"
+    ],
+    "CreateAutomatonAction": [
+      "automaton",
+      "automaton_parameters"
+    ],
+    "CreateFieldAction": [
+      "field_rent",
+      "field_rent_period",
+      "field_rent_sign_direction",
+      "field_type"
+    ],
+    "CreateMagicBlockAction": [
+      "block_parameters",
+      "template"
+    ],
+    "CreateNPCAction": [
+      "key_item",
+      "key_overrides",
+      "name",
+      "npc_parameters",
+      "npc_template"
+    ],
+    "CreatePlotAction": [
+      "price"
+    ],
+    "CureAction": [],
+    "CustomProjectileAction": [
+      "attach_duration",
+      "block_hit_count",
+      "break_blocks",
+      "breakable_size",
+      "bypass_backfire",
+      "drag",
+      "entity_hit_count",
+      "gravity",
+      "headshot_effects",
+      "hit_count",
+      "hit_effects",
+      "hit_on_miss",
+      "hit_requires_entity",
+      "ignore_hit_entities",
+      "ignore_targeting",
+      "interval",
+      "lifetime",
+      "min_block_range",
+      "min_entity_range",
+      "miss_effects",
+      "pitch_max",
+      "pitch_min",
+      "plan",
+      "projectile_effects",
+      "projectile_effects_use_target",
+      "projectile_follow_player",
+      "range",
+      "reflect_count",
+      "reflect_reorient",
+      "reflect_reset_distance_traveled",
+      "reflect_target_caster",
+      "reflect_track_range",
+      "reflect_track_target",
+      "reorient",
+      "reset_time_on_path_change",
+      "return_offset",
+      "return_relative_offset",
+      "return_to_caster",
+      "reverse",
+      "speed",
+      "spread",
+      "spread_movement",
+      "spread_movement_max",
+      "start",
+      "target_breakables",
+      "target_self",
+      "target_self_timeout",
+      "tick_effects",
+      "tick_size",
+      "track_range",
+      "track_speed",
+      "track_target",
+      "update_launch_location",
+      "velocity",
+      "velocity_transform"
+    ],
+    "CycleBlockAction": [
+      "cycle_colors",
+      "cycle_variants",
+      "material_sets",
+      "materials"
+    ],
+    "CycleEntityAction": [],
+    "CylinderAction": [],
+    "DamageAction": [
+      "adaptive_knockback_resistance",
+      "cancel_on_kill_target",
+      "critical_damage_multiplier",
+      "critical_effects",
+      "critical_probability",
+      "damage",
+      "damage_max_distance",
+      "damage_min_distance",
+      "damage_multiplier",
+      "damage_source_location",
+      "damage_type",
+      "elemental_damage",
+      "entity_damage",
+      "invert_distance",
+      "knockback_resistance",
+      "magic",
+      "magic_damage",
+      "magic_entity_damage",
+      "min_damage",
+      "no_damage_ticks",
+      "percentage",
+      "physical",
+      "player_damage",
+      "set_last_damaged",
+      "set_last_damaged_by"
+    ],
+    "DeactivateAction": [
+      "deactivate_self"
+    ],
+    "DebuggerAction": [
+      "check",
+      "check_block",
+      "check_brain",
+      "force",
+      "level"
+    ],
+    "DelayAction": [
+      "delay",
+      "warmup"
+    ],
+    "DescendAction": [],
+    "DisablePhysicsAction": [
+      "duration",
+      "physics_buffer",
+      "undo"
+    ],
+    "DisarmAction": [
+      "display_name",
+      "keep_in_inventory",
+      "max_slot",
+      "min_slot"
+    ],
+    "DiscAction": [],
+    "DisguiseAction": [
+      "disguise"
+    ],
+    "DoorAction": [
+      "type"
+    ],
+    "DropAction": [
+      "drop_count",
+      "falling",
+      "give_to_caster",
+      "tool"
+    ],
+    "DropItemAction": [
+      "item"
+    ],
+    "DropSkullAction": [
+      "drop_at_source"
+    ],
+    "ElectrifyAction": [
+      "electrify"
+    ],
+    "EnchantWandAction": [
+      "levels",
+      "path",
+      "path_exact",
+      "requires",
+      "use_xp"
+    ],
+    "EntityAnimationAction": [
+      "animation"
+    ],
+    "EntityProjectileAction": [
+      "allow_replacement",
+      "apply_velocity",
+      "location_offset",
+      "no_target",
+      "orient",
+      "projectile_potion_effects",
+      "relative_location_offset",
+      "spawn_reason",
+      "teleport",
+      "type",
+      "variant",
+      "velocity_offset"
+    ],
+    "EntitySelectAction": [
+      "default_icon",
+      "limit",
+      "radius"
+    ],
+    "EquationAction": [
+      "iterations",
+      "iterations2",
+      "orient",
+      "orient_pitch",
+      "reorient",
+      "use_target_location",
+      "variable",
+      "variable2",
+      "x2_equation",
+      "x_equation",
+      "y2_equation",
+      "y_equation",
+      "z2_equation",
+      "z_equation"
+    ],
+    "EquationVolumeAction": [
+      "brushes",
+      "brushmod",
+      "equation"
+    ],
+    "EquipAction": [
+      "armor_slot",
+      "enchantments",
+      "item",
+      "material",
+      "replace_item",
+      "return_on_finish",
+      "slot",
+      "temporary",
+      "unbreakable",
+      "use_item"
+    ],
+    "ExplosionAction": [
+      "break_blocks",
+      "fire",
+      "size"
+    ],
+    "FakeBlockAction": [
+      "player_radius"
+    ],
+    "FallProtectionAction": [
+      "duration",
+      "protection_count"
+    ],
+    "FeedAction": [
+      "exhaustion",
+      "feed",
+      "food_level",
+      "saturation"
+    ],
+    "FillWandAction": [
+      "max_level"
+    ],
+    "FindMagicBlocksAction": [
+      "radius",
+      "target_all_worlds",
+      "target_block_mage",
+      "target_magic_blocks"
+    ],
+    "FindTileEntitiesAction": [
+      "radius"
+    ],
+    "FireworkAction": [
+      "color",
+      "color2",
+      "dy_offset",
+      "expected_lifespan",
+      "firework",
+      "flicker",
+      "launch",
+      "power",
+      "silent",
+      "speed",
+      "start",
+      "ticks_flown",
+      "trail",
+      "use_wand_color"
+    ],
+    "FlowerAction": [
+      "flowers",
+      "grow_on",
+      "tall_flowers"
+    ],
+    "FlyAction": [
+      "duration",
+      "max_height",
+      "max_height_above_ground",
+      "speed"
+    ],
+    "FreezeAction": [
+      "freeze_fire",
+      "freeze_lava",
+      "freeze_water",
+      "ice",
+      "pile_snow",
+      "snowable"
+    ],
+    "GiveCurrencyAction": [
+      "amount",
+      "currency"
+    ],
+    "GiveItemAction": [
+      "item",
+      "item_count",
+      "lore",
+      "max_item_count",
+      "name",
+      "permission",
+      "requires",
+      "stack_size"
+    ],
+    "GiveKitAction": [
+      "kit"
+    ],
+    "GlideAction": [
+      "require_elytra",
+      "wait_for_landing"
+    ],
+    "GrowEntityAction": [
+      "skeletons"
+    ],
+    "HatAction": [],
+    "HealAction": [
+      "amount",
+      "heal_max_distance",
+      "percentage"
+    ],
+    "IgniteAction": [
+      "duration"
+    ],
+    "IntervalAction": [
+      "duration",
+      "interval"
+    ],
+    "InventoryAction": [
+      "target",
+      "title",
+      "type"
+    ],
+    "InventoryCloseAction": [],
+    "ItemShopAction": [
+      "items"
+    ],
+    "KillAction": [
+      "magic_damage"
+    ],
+    "LedgerAction": [
+      "ignore_currencies",
+      "show_currencies"
+    ],
+    "LightAction": [
+      "async",
+      "level",
+      "min_distance",
+      "undo_previous",
+      "update"
+    ],
+    "LightningAction": [
+      "effect_only"
+    ],
+    "LineAction": [
+      "increment_data",
+      "reorient",
+      "require_block",
+      "reverse",
+      "size",
+      "start",
+      "start_at_target"
+    ],
+    "LineOfEffectAction": [
+      "ignore_modified",
+      "radius",
+      "random_choose",
+      "range",
+      "range_back",
+      "range_front",
+      "target_count",
+      "target_source"
+    ],
+    "LockAction": [
+      "key_description",
+      "key_icon",
+      "key_name",
+      "override",
+      "type"
+    ],
+    "LowerBlockAction": [
+      "faces",
+      "slopes",
+      "vertical_range"
+    ],
+    "MessageAction": [
+      "dialog_format",
+      "equation",
+      "fade_in",
+      "fade_out",
+      "message",
+      "message_key",
+      "message_target",
+      "message_type",
+      "stay",
+      "sub_message",
+      "sub_message_key"
+    ],
+    "ModelEngineAction": [
+      "color",
+      "custom_id",
+      "exact_match",
+      "ignore_lerp",
+      "lerp_in",
+      "lerp_out",
+      "lerp_speed",
+      "model_action",
+      "model_id",
+      "model_state",
+      "part_id",
+      "sub_model_id",
+      "sub_part_id"
+    ],
+    "ModifierAction": [
+      "add_modifiers",
+      "duration",
+      "duration_multiplier",
+      "remove_modifiers",
+      "remove_on_finish"
+    ],
+    "ModifyAttributeAction": [
+      "attribute",
+      "bypass_undo",
+      "modify_target",
+      "original_variable",
+      "value"
+    ],
+    "ModifyBlockAction": [
+      "auto_block_state",
+      "breakable",
+      "check_chunk",
+      "commit",
+      "consume",
+      "consume_variants",
+      "damage",
+      "direction",
+      "fall_damage",
+      "falling",
+      "falling_hurts",
+      "falling_probability",
+      "max_damage",
+      "physics",
+      "reflect_chance",
+      "replace_same",
+      "speed"
+    ],
+    "ModifyBreakableAction": [
+      "breakable",
+      "target_air"
+    ],
+    "ModifyCompassAction": [
+      "tracked"
+    ],
+    "ModifyCurrencyAction": [
+      "currency",
+      "value"
+    ],
+    "ModifyEntityAction": [
+      "direction",
+      "dy_offset",
+      "force",
+      "no_drops",
+      "own",
+      "reason",
+      "speed",
+      "tamed"
+    ],
+    "ModifyGameModeAction": [
+      "game_mode"
+    ],
+    "ModifyLoreAction": [
+      "digits",
+      "modify"
+    ],
+    "ModifyMageAction": [
+      "mage_class",
+      "modify_type"
+    ],
+    "ModifyManaAction": [
+      "fill_mana",
+      "mana"
+    ],
+    "ModifyMaxHealthAction": [
+      "health_scale",
+      "max_health"
+    ],
+    "ModifyNoDamageTicksAction": [
+      "no_damage_ticks"
+    ],
+    "ModifyNPCAction": [
+      "name",
+      "name_from_wand",
+      "npc_id",
+      "npc_parameters",
+      "npc_template"
+    ],
+    "ModifyParametersAction": [],
+    "ModifyPropertiesAction": [
+      "bypass_undo",
+      "modify",
+      "modify_target",
+      "original_variable",
+      "upgrade"
+    ],
+    "ModifyReflectiveAction": [
+      "reflect_chance"
+    ],
+    "ModifySPAction": [
+      "sp"
+    ],
+    "ModifyVariableAction": [
+      "clear",
+      "default",
+      "scope",
+      "value",
+      "variable"
+    ],
+    "ModifyWalkSpeedAction": [
+      "speed"
+    ],
+    "MountAction": [
+      "dismount",
+      "eject"
+    ],
+    "MountArmorStandAction": [
+      "armor_stand_gravity",
+      "armor_stand_health",
+      "armor_stand_invisible",
+      "armor_stand_invulnerable",
+      "armor_stand_marker",
+      "armor_stand_pitch",
+      "armor_stand_reason",
+      "armor_stand_roll",
+      "armor_stand_small",
+      "find_wand",
+      "helmet_item",
+      "mount_name",
+      "mount_target",
+      "mount_untargetable",
+      "mount_wand",
+      "replacement_item"
+    ],
+    "MoveBlockAction": [
+      "clear_target",
+      "offset",
+      "set_target"
+    ],
+    "MultiplyAction": [
+      "first",
+      "multiply"
+    ],
+    "OrientAction": [
+      "orient_target",
+      "pitch",
+      "pitch_offset",
+      "target_block",
+      "yaw",
+      "yaw_offset"
+    ],
+    "ParallelAction": [],
+    "PlaneAction": [
+      "axis",
+      "brush_axis"
+    ],
+    "PlayEffectsAction": [
+      "effect",
+      "effects",
+      "effects_count_as_cast"
+    ],
+    "PlayerSelectAction": [
+      "cross_world",
+      "ignore_key",
+      "name_template",
+      "title_key"
+    ],
+    "PlayRecordAction": [
+      "records"
+    ],
+    "PlaySoundAction": [
+      "effects_count_as_cast",
+      "pitch",
+      "radius",
+      "sound",
+      "sound_pitch",
+      "sound_volume",
+      "sounds_count_as_cast",
+      "volume"
+    ],
+    "PotionEffectAction": [
+      "add_effects",
+      "amplifier",
+      "duration",
+      "duration_multiplier",
+      "effects_ambient",
+      "effects_particles",
+      "potion_effects",
+      "remove_effects",
+      "remove_on_finish"
+    ],
+    "PowerBlockAction": [
+      "physics"
+    ],
+    "ProbabilityAction": [
+      "probability"
+    ],
+    "ProjectileAction": [
+      "arrow_damage",
+      "break_blocks",
+      "color",
+      "count",
+      "damage",
+      "fire",
+      "pickup",
+      "projectile",
+      "size",
+      "speed",
+      "spread",
+      "start",
+      "tick_increase"
+    ],
+    "RaiseBlockAction": [
+      "consume",
+      "consume_variants",
+      "faces",
+      "max_height",
+      "slopes",
+      "vertical_range"
+    ],
+    "RandomAction": [],
+    "RecallAction": [
+      "addfriend",
+      "allow_all",
+      "allow_cross_world",
+      "allow_magic_warps",
+      "allow_marker",
+      "commands",
+      "confirm_marker",
+      "delay",
+      "friend_key",
+      "group",
+      "icon_death",
+      "lock",
+      "marker_count",
+      "marker_key",
+      "marker_maintain_direction",
+      "marker_requires_build",
+      "options",
+      "placeholder_icon",
+      "protection_duration",
+      "removefriend",
+      "require_target_permission",
+      "show_unavailable",
+      "teleport",
+      "teleport_target",
+      "title",
+      "title_key",
+      "type",
+      "unavailable_warp_description",
+      "unlock",
+      "unlock_key",
+      "warmup",
+      "warp",
+      "warps"
+    ],
+    "RectOfEffectAction": [
+      "ignore_modified",
+      "max",
+      "min",
+      "random_choose",
+      "target_count",
+      "target_source"
+    ],
+    "RecurseAction": [
+      "auto_lava",
+      "auto_snow",
+      "auto_water",
+      "checkered",
+      "debug_depth",
+      "debug_material",
+      "depth",
+      "depth_first",
+      "faces",
+      "limit",
+      "priority_faces",
+      "replace",
+      "size"
+    ],
+    "RemoveEntityAction": [
+      "ignore_invalid"
+    ],
+    "RemoveNPCAction": [
+      "npc_id"
+    ],
+    "RemoveSpellAction": [
+      "spell"
+    ],
+    "RemoveWandAction": [],
+    "RepairItemAction": [
+      "armor",
+      "held_item"
+    ],
+    "RepeatAction": [
+      "repeat"
+    ],
+    "ResetMageAction": [],
+    "RespawnAction": [],
+    "RetargetAction": [
+      "range"
+    ],
+    "RideEntityAction": [
+      "air_controllable",
+      "boost_attribute",
+      "braking",
+      "controllable",
+      "crash_braking",
+      "crash_cooldown",
+      "crash_damage",
+      "crash_dismount_speed",
+      "crash_distance",
+      "crash_effects",
+      "crash_entity_cooldown",
+      "crash_entity_damage",
+      "crash_entity_dismount_speed",
+      "crash_entity_distance",
+      "crash_entity_fov",
+      "crash_entity_speed",
+      "crash_entity_vehicle_damage",
+      "crash_into",
+      "crash_speed",
+      "crash_vehicle_damage",
+      "crash_velocity",
+      "crash_velocity_y_offset",
+      "direction_y",
+      "dismount_height",
+      "duration",
+      "duration_warning",
+      "exemption_duration",
+      "fall_protection",
+      "gravity",
+      "height_check_radius",
+      "jump_cast",
+      "jump_controllable",
+      "jump_velocity",
+      "liftoff_duration",
+      "liftoff_thrust",
+      "max_acceleration",
+      "max_ascend",
+      "max_deceleration",
+      "max_height",
+      "max_height_above_ground",
+      "max_speed",
+      "min_speed",
+      "mount_no_drops",
+      "mount_untargetable",
+      "passenger",
+      "pitch_controllable",
+      "pitch_offset",
+      "rider_untargetable",
+      "riding_effects",
+      "sneak_controllable",
+      "sound",
+      "sound_interval",
+      "sound_max_pitch",
+      "sound_max_volume",
+      "sound_min_pitch",
+      "sound_min_volume",
+      "sound_pitch",
+      "sound_volume",
+      "start_speed",
+      "steer_controllable",
+      "steer_speed",
+      "strafe_controllable",
+      "terminal_velocity",
+      "warning_effects",
+      "yaw_offset"
+    ],
+    "RingAction": [],
+    "SelectorAction": [
+      "add_options",
+      "cast_for_tags",
+      "chest_location",
+      "commands",
+      "confirm_filler",
+      "confirm_title",
+      "confirm_title_key",
+      "cost_lore",
+      "cost_modifiers",
+      "cost_type_fallback",
+      "cost_type_fallbacks",
+      "costs",
+      "earn_modifiers",
+      "earns",
+      "icon_hide_flags",
+      "icon_unbreakable",
+      "lock_classes",
+      "options",
+      "owner_uuid",
+      "required_cost_lore",
+      "required_unlock_cost_lore",
+      "title",
+      "title_key",
+      "unlock_confirm_title",
+      "unlock_confirm_title_key",
+      "unlock_cost_lore"
+    ],
+    "SerialAction": [],
+    "SetSpawnAction": [],
+    "ShopAction": [
+      "add_options",
+      "add_sell_shop",
+      "apply_lore_to_item",
+      "apply_name_to_item",
+      "buy_icon",
+      "check_max_spells",
+      "cost_type",
+      "sell",
+      "sell_icon",
+      "show_extra_spells",
+      "show_free",
+      "show_missing_requirements",
+      "show_no_permission",
+      "show_path_spells",
+      "show_required_spells",
+      "show_uncastable",
+      "spells"
+    ],
+    "ShrinkBlockAction": [],
+    "ShrinkEntityAction": [
+      "drop_skull",
+      "skeletons"
+    ],
+    "SimulateAction": [],
+    "SkillSelectorAction": [
+      "page"
+    ],
+    "SkipAction": [
+      "repeat_skip",
+      "skip",
+      "until"
+    ],
+    "SpawnEntityAction": [
+      "allow_replacement",
+      "direction",
+      "dy_offset",
+      "entity_parameters",
+      "entity_types",
+      "force",
+      "loot",
+      "on_block",
+      "owned",
+      "parameterize_name",
+      "reason",
+      "repeat_random",
+      "set_source",
+      "set_target",
+      "speed",
+      "tamed",
+      "type",
+      "use_wand_name",
+      "wait_for_death"
+    ],
+    "SpellProgressAction": [],
+    "SpellShopAction": [
+      "allow_locked",
+      "show_extra_spells",
+      "show_free",
+      "show_path_spells",
+      "show_required_spells",
+      "show_upgrades",
+      "spells",
+      "upgrade_requires_casts"
+    ],
+    "SphereAction": [],
+    "SpreadAction": [
+      "center_probability",
+      "outer_probability",
+      "pitch_max",
+      "probability",
+      "radius",
+      "yaw_max"
+    ],
+    "StashWandAction": [
+      "return_on_finish"
+    ],
+    "StopAction": [],
+    "StopSoundAction": [
+      "sound"
+    ],
+    "SuperProtectionAction": [
+      "duration"
+    ],
+    "TakeCostsAction": [
+      "costs",
+      "item",
+      "item_cost"
+    ],
+    "TakeItemAction": [
+      "display_name",
+      "full_stack",
+      "give_to_caster",
+      "item",
+      "take_wand"
+    ],
+    "TameAction": [
+      "own",
+      "persist"
+    ],
+    "TeleportAction": [
+      "allow_passthrough",
+      "direct",
+      "ledge_range",
+      "passthrough_range",
+      "round_up",
+      "same_block",
+      "teleport_target",
+      "use_target_location"
+    ],
+    "TeleportNPCAction": [
+      "npc_id"
+    ],
+    "ThrowBlockAction": [
+      "consume",
+      "consume_variants",
+      "damage",
+      "fall_damage",
+      "hurts",
+      "max_damage",
+      "speed",
+      "speed_max",
+      "speed_min"
+    ],
+    "ThrowItemAction": [
+      "age_items",
+      "item",
+      "pickup_delay",
+      "speed",
+      "speed_max",
+      "speed_min",
+      "temporary",
+      "throw_wand",
+      "unbreakable"
+    ],
+    "TileEntitiesAction": [
+      "target_all_worlds"
+    ],
+    "TimeAction": [
+      "cycle_moon_phase",
+      "time"
+    ],
+    "TNTAction": [
+      "break_blocks",
+      "count",
+      "fire",
+      "fuse",
+      "size",
+      "tnt_velocity"
+    ],
+    "TorchAction": [
+      "allow_glowstone",
+      "allow_sea_lantern",
+      "glowstone_torch",
+      "not_attachable",
+      "redstone_torch"
+    ],
+    "TreeAction": [
+      "biomes",
+      "require_sapling",
+      "type"
+    ],
+    "TriggerAction": [
+      "trigger"
+    ],
+    "UndoAction": [
+      "admin_permission",
+      "cancel",
+      "sort",
+      "target_block_timeout",
+      "target_blocks",
+      "target_caster",
+      "target_down",
+      "target_other_blocks",
+      "target_spell",
+      "target_timeout",
+      "undo_oldest",
+      "undo_to"
+    ],
+    "UpdateParametersAction": [],
+    "UpgradePathAction": [
+      "upgrade_levels"
+    ],
+    "VanishAction": [
+      "vanish"
+    ],
+    "VelocityAction": [
+      "additive",
+      "allow_max_height",
+      "damaged",
+      "direction",
+      "exemption_duration",
+      "invert_distance",
+      "item_speed",
+      "living_entity_speed",
+      "max_altitude",
+      "max_magnitude",
+      "max_speed",
+      "min_speed",
+      "push",
+      "speed",
+      "velocity_max_distance",
+      "y_offset"
+    ],
+    "VolumeAction": [
+      "center_probability",
+      "center_x",
+      "center_y",
+      "center_z",
+      "check_chunk",
+      "orient",
+      "orient_pitch",
+      "orient_pitch_snap",
+      "orient_snap",
+      "outer_probability",
+      "probability",
+      "radius",
+      "radius_padding",
+      "reorient",
+      "replace",
+      "thickness",
+      "use_brush_size",
+      "volume_type",
+      "x_size",
+      "y_size",
+      "z_size"
+    ],
+    "WandInstructionsAction": [
+      "message_target"
+    ],
+    "WarpAction": [
+      "warp"
+    ],
+    "WearAction": [],
+    "WeatherAction": [
+      "player_weather",
+      "weather"
+    ],
+    "WhileAction": [
+      "interval"
+    ]
+  },
+  "bases": {
+    "ActionContext": [
+      "parameters"
+    ],
+    "ActionHandler": [],
+    "ActionHandlerContext": [],
+    "BaseProjectileAction": [
+      "hit_effects",
+      "lifetime",
+      "projectile_effects",
+      "projectile_effects_use_target",
+      "set_target",
+      "track_projectile"
+    ],
+    "BaseShopAction": [
+      "apply_to_caster",
+      "apply_to_wand",
+      "auto_close",
+      "auto_upgrade",
+      "cast_spells",
+      "confirm",
+      "confirm_filler",
+      "filter_bound",
+      "path",
+      "path_end",
+      "path_exact",
+      "permission",
+      "put_in_hand",
+      "require_template",
+      "require_wand",
+      "scale",
+      "sell",
+      "show_active_icons",
+      "upgrade_levels",
+      "use_items",
+      "use_sp",
+      "use_xp",
+      "worth_item"
+    ],
+    "BaseSpellAction": [],
+    "BaseTeleportAction": [
+      "keep_velocity",
+      "maintain_direction",
+      "prevent_fall",
+      "require_build",
+      "require_exit",
+      "safe",
+      "teleport_vehicle",
+      "vertical_range"
+    ],
+    "CastContext": [],
+    "CheckAction": [
+      "invert",
+      "timeout"
+    ],
+    "CompoundAction": [
+      "stop_on_success"
+    ],
+    "CompoundEntityAction": [
+      "sort"
+    ],
+    "CompoundLocationAction": [
+      "target_count"
+    ],
+    "NamedActionResolver": [],
+    "RestrictedAction": []
+  },
+  "abstract": []
+}

@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MagicPlugin Validator — wand / spell YAML チェッカー</title>
+<meta name="description" content="MagicPlugin の wand / spell YAML を、ブラウザ上だけで検証します。ファイルはどこにも送信されません。">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #fbfbfd;
+  --panel: #ffffff;
+  --border: #dfe3e8;
+  --text: #1b1f24;
+  --muted: #656d76;
+  --accent: #6b46c1;
+  --accent-soft: #f3effc;
+  --error: #cf222e;
+  --major: #bc4c00;
+  --warn: #9a6700;
+  --note: #57606a;
+  --ok: #1a7f37;
+  --code: #f4f4f8;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1116;
+    --panel: #161a22;
+    --border: #2b313b;
+    --text: #e6e9ef;
+    --muted: #99a2b0;
+    --accent: #b191f2;
+    --accent-soft: #221c33;
+    --error: #ff7b72;
+    --major: #ffa657;
+    --warn: #e3b341;
+    --note: #8b949e;
+    --ok: #56d364;
+    --code: #1c212b;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+  font-size: 15px;
+}
+.wrap { max-width: 940px; margin: 0 auto; padding: 32px 20px 80px; }
+header h1 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+header p { margin: 0; color: var(--muted); }
+header .sub { font-size: 0.9rem; margin-top: 10px; }
+a { color: var(--accent); }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-top: 22px;
+}
+.panel h2 { font-size: 1rem; margin: 0 0 12px; }
+
+#drop {
+  display: block;           /* label は既定が inline。付けないと枠と文字が崩れる */
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 26px 18px;
+  text-align: center;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+#drop:hover, #drop.over { border-color: var(--accent); background: var(--accent-soft); }
+#drop strong { color: var(--text); display: block; margin-bottom: 4px; }
+#drop input { display: none; }
+
+.files { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.files li {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--code); border: 1px solid var(--border);
+  border-radius: 999px; padding: 3px 6px 3px 12px; font-size: .85rem;
+}
+.files button {
+  border: 0; background: transparent; color: var(--muted);
+  cursor: pointer; font-size: 1rem; line-height: 1; padding: 2px 6px; border-radius: 999px;
+}
+.files button:hover { background: var(--border); color: var(--text); }
+
+textarea {
+  width: 100%; min-height: 190px; resize: vertical;
+  background: var(--code); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px; line-height: 1.6;
+}
+textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 12px; }
+button.btn {
+  border: 1px solid var(--border); background: var(--panel); color: var(--text);
+  border-radius: 8px; padding: 7px 14px; cursor: pointer; font-size: .9rem; font-family: inherit;
+}
+button.btn:hover { border-color: var(--accent); color: var(--accent); }
+button.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.btn.primary:hover { opacity: .9; color: #fff; }
+
+.summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+.chip {
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px 13px; font-size: .85rem; cursor: pointer; background: var(--panel);
+  font-family: inherit; color: var(--text);
+}
+.chip[aria-pressed="true"] { border-color: currentColor; background: var(--accent-soft); }
+.chip.error { color: var(--error); }
+.chip.major { color: var(--major); }
+.chip.warn  { color: var(--warn); }
+.chip.note  { color: var(--note); }
+
+.group { margin-top: 24px; }
+.group > h3 { font-size: .95rem; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+.group.error > h3 { color: var(--error); }
+.group.major > h3 { color: var(--major); }
+.group.warn  > h3 { color: var(--warn); }
+.group.note  > h3 { color: var(--note); }
+
+.file-block { margin-bottom: 14px; }
+.file-block > .fname {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .8rem; color: var(--muted); margin-bottom: 6px;
+}
+.item {
+  border-left: 3px solid currentColor;
+  padding: 6px 0 6px 12px; margin-bottom: 10px;
+}
+.item .loc {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .8rem; color: var(--muted); word-break: break-all;
+}
+.item .msg { color: var(--text); }
+.item .hint { color: var(--muted); font-size: .9rem; }
+
+.ok { color: var(--ok); font-weight: 600; }
+.empty { color: var(--muted); }
+
+table.levels { border-collapse: collapse; width: 100%; font-size: .88rem; margin-top: 6px; }
+table.levels th, table.levels td { border-bottom: 1px solid var(--border); padding: 7px 8px; text-align: left; vertical-align: top; }
+table.levels th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+table.levels td:first-child { white-space: nowrap; font-weight: 600; }
+
+footer { margin-top: 40px; color: var(--muted); font-size: .85rem; }
+code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+details summary { cursor: pointer; color: var(--muted); }
+details[open] summary { margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>MagicPlugin Validator</h1>
+  <p><a href="https://github.com/elBukkit/MagicPlugin">MagicPlugin</a> の wand / spell YAML を検証します。</p>
+  <p class="sub">
+    Magic は書き間違いを警告しません。未知のキーも無効な enum 名も黙って無視され、「なぜか何も起きない」になります。
+    このページはそれを配置前に見つけます。<strong>検証はブラウザ内で完結し、ファイルはどこにも送信されません。</strong>
+  </p>
+</header>
+
+<section class="panel">
+  <h2>1. ファイルを読み込む</h2>
+  <label id="drop" for="picker">
+    <strong>ここに .yml をドロップ</strong>
+    クリックして選択（複数可）。wand と spell を一緒に入れると相互参照もチェックします
+    <input id="picker" type="file" multiple accept=".yml,.yaml">
+  </label>
+  <ul class="files" id="filelist"></ul>
+
+  <div class="row">
+    <button class="btn" id="sample">サンプルを読み込む</button>
+    <button class="btn" id="clear">クリア</button>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>2. または貼り付ける</h2>
+  <textarea id="paste" spellcheck="false" placeholder="my_sword:&#10;  name: マイソード&#10;  icon: iron_sword&#10;  alternate_spell: my_sword_slash&#10;  right_click: alt_cast&#10;"></textarea>
+</section>
+
+<section class="panel">
+  <h2>結果</h2>
+  <div class="summary" id="summary"></div>
+  <div id="results"><p class="empty">ファイルを読み込むか貼り付けると、自動で検証します。</p></div>
+</section>
+
+<section class="panel">
+  <h2>深刻度について</h2>
+  <table class="levels">
+    <tr><th>レベル</th><th>意味</th><th>対応</th></tr>
+    <tr><td style="color:var(--error)">✗ エラー</td>
+        <td>存在しない Particle / Sound / Material、wand の無効キー、不明な EffectLib クラス、<code>alt_castN</code> の番号ずれ</td>
+        <td>必ず潰す。その行は確実に効かない</td></tr>
+    <tr><td style="color:var(--major)">⚠ 重要</td>
+        <td>構文は正しいのに黙って実害が出る。値が切り捨てられる、併記した片方が無視される、耐久で壊れる など</td>
+        <td>必ず潰す。エラーが出ないぶんこちらの方が危険</td></tr>
+    <tr><td style="color:var(--warn)">! 警告</td>
+        <td>タイポの疑い、推奨から外れている</td>
+        <td>見て判断する</td></tr>
+    <tr><td style="color:var(--note)">· 補足</td>
+        <td>参照データの機械抽出が漏れているかもしれない行</td>
+        <td>ソースを確認して有効なら無視してよい</td></tr>
+  </table>
+  <details style="margin-top:14px">
+    <summary>「⚠ 重要」で何を見ているか</summary>
+    <p style="margin-top:0">
+      いずれも MagicPlugin のソースを読んで裏を取った判定です。例:
+    </p>
+    <ul>
+      <li><code>AreaOfEffect</code> / <code>LineOfEffect</code> の <code>radius</code> は <code>int</code> に切り捨てられる（<code>0.75</code> → <code>0</code> で当たらなくなる）</li>
+      <li><code>Velocity</code> に <code>min_speed</code> / <code>max_speed</code> があると <code>speed</code> は無視される</li>
+      <li><code>CustomProjectile</code> に <code>velocity</code> があると <code>speed</code> は無視される（単位も20倍違う）</li>
+      <li><code>CheckVelocity</code> の <code>min_speed</code> は実装が <code>max_speed</code> と同じ向きで、意味が反転している</li>
+      <li><code>ConeOfEffect</code> は <code>radius</code> を読まない（扇の広さは <code>fov</code>）</li>
+      <li><code>effects:</code> の <code>delay</code> はミリ秒を整数除算するので 50 未満は 0tick になる</li>
+      <li><code>Damage</code> の <code>no_damage_ticks: 1〜10</code> は <code>0</code> と同じで多段ヒットを防げない</li>
+      <li>技を持つ wand に <code>indestructible</code> が無いと耐久で壊れて消える</li>
+    </ul>
+  </details>
+</section>
+
+<footer>
+  <p>
+    参照データは <a href="https://github.com/elBukkit/MagicPlugin">MagicPlugin</a> と
+    <a href="https://github.com/Slikey/EffectLib">EffectLib</a> のソース、および Paper 1.21.8 の enum から生成しています。
+    Minecraft 1.21.8 / Paper 想定。
+  </p>
+  <p>
+    <a href="https://github.com/jintajinta/MagicPlugin-Validator">ソース・CLI 版・不具合報告</a> ·
+    MIT License
+  </p>
+</footer>
+
+</div>
+
+<script type="module">
+import { load } from './vendor/js-yaml.mjs';
+import { validate, LEVELS, LEVEL_LABEL } from './src/validator.js';
+import { REFERENCE } from './src/reference.js';
+
+const $ = (id) => document.getElementById(id);
+const files = new Map();           // name -> text
+const hidden = new Set();          // 非表示にしているレベル
+
+// ------------------------------------------------------------------ 入力
+function addFile(name, text) {
+  let key = name, n = 2;
+  while (files.has(key) && files.get(key) !== text) key = `${name} (${n++})`;
+  files.set(key, text);
+}
+
+function renderFileList() {
+  const ul = $('filelist');
+  ul.innerHTML = '';
+  for (const name of files.keys()) {
+    const li = document.createElement('li');
+    li.textContent = name;
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = '×';
+    b.title = '外す';
+    b.addEventListener('click', () => { files.delete(name); renderFileList(); run(); });
+    li.appendChild(b);
+    ul.appendChild(li);
+  }
+}
+
+async function readFiles(list) {
+  for (const f of list) {
+    if (!/\.ya?ml$/i.test(f.name)) continue;
+    addFile(f.name, await f.text());
+  }
+  renderFileList();
+  run();
+}
+
+$('picker').addEventListener('change', (e) => readFiles(e.target.files));
+
+const drop = $('drop');
+for (const ev of ['dragenter', 'dragover']) {
+  drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('over'); });
+}
+for (const ev of ['dragleave', 'drop']) {
+  drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('over'); });
+}
+drop.addEventListener('drop', (e) => readFiles(e.dataTransfer.files));
+
+let timer;
+$('paste').addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(run, 250); });
+
+$('clear').addEventListener('click', () => {
+  files.clear();
+  $('paste').value = '';
+  $('picker').value = '';
+  renderFileList();
+  run();
+});
+
+$('sample').addEventListener('click', async () => {
+  for (const n of ['broken_sword_wand.yml', 'broken_sword_spells.yml']) {
+    try {
+      const r = await fetch(`./examples/${n}`);
+      if (r.ok) addFile(n, await r.text());
+    } catch { /* 読めなければ何もしない */ }
+  }
+  renderFileList();
+  run();
+});
+
+// ------------------------------------------------------------------ 検証
+function currentFiles() {
+  const out = [...files.entries()].map(([name, text]) => ({ name, text }));
+  const pasted = $('paste').value.trim();
+  if (pasted) out.push({ name: '(貼り付け)', text: $('paste').value });
+  return out;
+}
+
+function run() {
+  const input = currentFiles();
+  const results = $('results');
+  const summary = $('summary');
+  if (input.length === 0) {
+    summary.innerHTML = '';
+    results.innerHTML = '<p class="empty">ファイルを読み込むか貼り付けると、自動で検証します。</p>';
+    return;
+  }
+
+  let problems;
+  try {
+    problems = validate(input, REFERENCE, load);
+  } catch (ex) {
+    results.innerHTML = '';
+    const p = document.createElement('p');
+    p.style.color = 'var(--error)';
+    p.textContent = `検証中にエラーが発生しました: ${ex.message}`;
+    results.appendChild(p);
+    return;
+  }
+
+  const byLevel = LEVELS.map((lv) => problems.filter((p) => p.level === lv));
+
+  // 集計チップ（クリックで表示/非表示）
+  summary.innerHTML = '';
+  LEVELS.forEach((lv, i) => {
+    const [mark, label] = LEVEL_LABEL[lv];
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = `chip ${lv}`;
+    b.setAttribute('aria-pressed', String(!hidden.has(lv)));
+    b.textContent = `${mark} ${label.split('（')[0]} ${byLevel[i].length}`;
+    b.title = label;
+    b.addEventListener('click', () => {
+      if (hidden.has(lv)) hidden.delete(lv); else hidden.add(lv);
+      run();
+    });
+    summary.appendChild(b);
+  });
+
+  results.innerHTML = '';
+  if (problems.length === 0) {
+    const p = document.createElement('p');
+    p.className = 'ok';
+    p.textContent = `✓ 問題なし（${input.length} ファイル）`;
+    results.appendChild(p);
+    return;
+  }
+
+  let shown = 0;
+  LEVELS.forEach((lv, i) => {
+    const list = byLevel[i];
+    if (list.length === 0 || hidden.has(lv)) return;
+    shown += list.length;
+    const [mark, label] = LEVEL_LABEL[lv];
+
+    const sec = document.createElement('div');
+    sec.className = `group ${lv}`;
+    const h = document.createElement('h3');
+    h.textContent = `${mark} ${label} (${list.length})`;
+    sec.appendChild(h);
+
+    let block = null, last = null;
+    for (const p of list) {
+      if (p.file !== last) {
+        block = document.createElement('div');
+        block.className = 'file-block';
+        const fn = document.createElement('div');
+        fn.className = 'fname';
+        fn.textContent = p.file;
+        block.appendChild(fn);
+        sec.appendChild(block);
+        last = p.file;
+      }
+      const item = document.createElement('div');
+      item.className = 'item';
+      const loc = document.createElement('div');
+      loc.className = 'loc';
+      loc.textContent = p.path;
+      const msg = document.createElement('div');
+      msg.className = 'msg';
+      msg.textContent = p.msg;
+      item.append(loc, msg);
+      if (p.hint) {
+        const hint = document.createElement('div');
+        hint.className = 'hint';
+        hint.textContent = `→ ${p.hint}`;
+        item.appendChild(hint);
+      }
+      block.appendChild(item);
+    }
+    results.appendChild(sec);
+  });
+
+  if (shown === 0) {
+    const p = document.createElement('p');
+    p.className = 'empty';
+    p.textContent = `${problems.length} 件の指摘がありますが、すべて非表示にしています。上のボタンで表示できます。`;
+    results.appendChild(p);
+  }
+}
+
+run();
+</script>
+</body>
+</html>

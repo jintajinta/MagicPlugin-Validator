@@ -1,0 +1,16 @@
+# わざと間違えたサンプル。「サンプルを読み込む」で使われる。
+# 何が引っかかるかは検証結果を見ること。
+broken_sword:
+  name: "&b&lサンプル剣"
+  lore:
+  - "&7わざと間違えてある"
+  icon: iron_sword
+
+  alternate_spell:  broken_sword_slash
+  alternate_spell2: broken_sword_dash
+  right_click:      alt_cast
+  left_click:       alt_cast3          # alternate_spell3 が無いので発動しない
+
+  mana_max: 60
+  mana_regeneration: 4
+  # indestructible が無いので、振っているうちに耐久で壊れて wand ごと消える

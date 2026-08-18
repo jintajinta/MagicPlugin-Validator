@@ -1,0 +1,18 @@
+{
+  "name": "magicplugin-validator",
+  "version": "1.0.0",
+  "description": "MagicPlugin の wand / spell YAML を検証する。ブラウザ版と CLI。",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "magic-validate": "bin/validate.mjs" },
+  "scripts": {
+    "validate": "node bin/validate.mjs",
+    "test": "node bin/validate.mjs examples/ --level=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jintajinta/MagicPlugin-Validator.git"
+  },
+  "keywords": ["minecraft", "magicplugin", "yaml", "validator", "paper", "spigot"],
+  "files": ["bin", "src", "vendor", "README.md", "LICENSE"]
+}
