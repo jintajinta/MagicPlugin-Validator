@@ -120,11 +120,12 @@ button.btn.primary:hover { opacity: .9; color: #fff; }
 .chip.note  { color: var(--note); }
 
 .group { margin-top: 24px; }
+/* レベル色をグループ全体に流す。見出し・左の罫線・指摘本文がまとめて色付く */
+.group.error { color: var(--error); }
+.group.major { color: var(--major); }
+.group.warn  { color: var(--warn); }
+.group.note  { color: var(--note); }
 .group > h3 { font-size: .95rem; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
-.group.error > h3 { color: var(--error); }
-.group.major > h3 { color: var(--major); }
-.group.warn  > h3 { color: var(--warn); }
-.group.note  > h3 { color: var(--note); }
 
 .file-block { margin-bottom: 14px; }
 .file-block > .fname {
@@ -139,7 +140,7 @@ button.btn.primary:hover { opacity: .9; color: #fff; }
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: .8rem; color: var(--muted); word-break: break-all;
 }
-.item .msg { color: var(--text); }
+.item .msg { color: inherit; }   /* 指摘そのものをレベル色で出す */
 .item .hint { color: var(--muted); font-size: .9rem; }
 
 .ok { color: var(--ok); font-weight: 600; }
