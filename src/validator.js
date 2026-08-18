@@ -12,10 +12,47 @@ export const LEVEL_LABEL = {
 };
 
 /**
+ * 指摘の path（例 my_spell.actions.cast[0].radius）から行番号（1始まり）を割り出す。
+ * オブジェクトの開始行まで辿り、末尾がキー名ならその行を近くから探して精度を上げる。
+ * 割り出せなければ undefined を返す。
+ */
+function resolveLine(src, path) {
+  if (!src || !src.doc || typeof path !== 'string') return undefined;
+
+  const segments = [];
+  for (const part of path.split('.')) {
+    const m = /^(.*?)((?:\[\d+\])*)$/.exec(part);
+    if (!m) return undefined;
+    if (m[1]) segments.push(m[1]);
+    for (const idx of m[2].matchAll(/\[(\d+)\]/g)) segments.push(Number(idx[1]));
+  }
+
+  let node = src.doc;
+  let key = null;
+  for (const seg of segments) {
+    if (!node || typeof node !== 'object') break;
+    const next = node[seg];
+    if (next && typeof next === 'object') { node = next; key = null; continue; }
+    key = typeof seg === 'string' ? seg : null;   // スカラーか、存在しないキー
+    break;
+  }
+
+  const from = src.startLine.get(node);
+  if (from === undefined) return undefined;
+  if (key) {
+    const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`^\\s*-?\\s*${escaped}\\s*:`);
+    const limit = Math.min(src.lines.length, from + 300);
+    for (let i = from; i < limit; i++) if (re.test(src.lines[i])) return i + 1;
+  }
+  return from + 1;
+}
+
+/**
  * @param {{name: string, text: string}[]} files 検証する YAML
  * @param {object} ref  reference.js の REFERENCE
- * @param {(text: string) => any} parseYaml  YAML パーサ（js-yaml の load を渡す）
- * @returns {{level: string, file: string, path: string, msg: string, hint?: string}[]}
+ * @param {(text: string, options?: object) => any} parseYaml  YAML パーサ（js-yaml の load を渡す）
+ * @returns {{level: string, file: string, path: string, msg: string, hint?: string, line?: number}[]}
  */
 export function validate(files, ref, parseYaml) {
   const toSet = (v) => (v instanceof Set ? v : new Set(v));
@@ -478,13 +515,29 @@ export function validate(files, ref, parseYaml) {
   }
 
   // ------------------------------------------------------------------ 実行
-  // 全ファイルを先にパースして、spell 名の一覧を作る（wand の参照チェック用）
+  // 全ファイルを先にパースして、spell 名の一覧を作る（wand の参照チェック用）。
+  // あわせて「どのノードが何行目で始まったか」を控える。js-yaml は既定で位置を捨てるが、
+  // listener の open イベントなら開始行が取れる（close は終了行なのでずれる）。
   const parsed = [];
+  const source = new Map();   // file -> { doc, startLine: WeakMap<object, number>, lines }
   for (const f of files) {
+    const startLine = new WeakMap();
+    const open = [];
     try {
-      parsed.push({ file: f.name, doc: parseYaml(f.text) });
+      const doc = parseYaml(f.text, {
+        listener(event, state) {
+          if (event === 'open') { open.push(state.line); return; }
+          const from = open.pop();
+          const node = state.result;
+          if (node && typeof node === 'object' && !startLine.has(node)) startLine.set(node, from);
+        },
+      });
+      parsed.push({ file: f.name, doc });
+      source.set(f.name, { doc, startLine, lines: f.text.split('\n') });
     } catch (ex) {
+      const m = /at line (\d+)/.exec(String(ex.message ?? ex));
       err(f.name, '(YAML)', `パースできない: ${String(ex.message ?? ex).split('\n')[0]}`);
+      if (m) problems[problems.length - 1].line = Number(m[1]);
       parsed.push({ file: f.name, doc: null });
     }
   }
@@ -515,6 +568,12 @@ export function validate(files, ref, parseYaml) {
       if (isSpellDef(def)) checkSpell(file, name, def);
       else checkWand(file, name, def, knownSpells);
     }
+  }
+
+  // 指摘の path（例 my_spell.actions.cast[0].radius）を辿って行番号を埋める。
+  // 各チェック関数に手を入れずに済むよう、最後にまとめて解決する。
+  for (const p of problems) {
+    if (p.line === undefined) p.line = resolveLine(source.get(p.file), p.path);
   }
 
   return problems;

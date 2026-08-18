@@ -140,6 +140,10 @@ button.btn.primary:hover { opacity: .9; color: #fff; }
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: .8rem; color: var(--muted); word-break: break-all;
 }
+.item .ln {
+  display: inline-block; margin-right: 8px; padding: 0 6px; border-radius: 4px;
+  background: var(--code); color: var(--text); font-weight: 600;
+}
 .item .msg { color: inherit; }   /* 指摘そのものをレベル色で出す */
 .item .hint { color: var(--muted); font-size: .9rem; }
 
@@ -344,7 +348,9 @@ function run() {
     return;
   }
 
-  const byLevel = LEVELS.map((lv) => problems.filter((p) => p.level === lv));
+  // ファイルごとに、上から順に直していけるよう行番号順に並べる
+  const inOrder = (a, b) => a.file.localeCompare(b.file) || (a.line ?? 0) - (b.line ?? 0);
+  const byLevel = LEVELS.map((lv) => problems.filter((p) => p.level === lv).sort(inOrder));
 
   // 集計チップ（クリックで表示/非表示）
   summary.innerHTML = '';
@@ -401,7 +407,13 @@ function run() {
       item.className = 'item';
       const loc = document.createElement('div');
       loc.className = 'loc';
-      loc.textContent = p.path;
+      if (p.line) {
+        const ln = document.createElement('span');
+        ln.className = 'ln';
+        ln.textContent = `${p.line}行目`;
+        loc.appendChild(ln);
+      }
+      loc.append(p.path);
       const msg = document.createElement('div');
       msg.className = 'msg';
       msg.textContent = p.msg;

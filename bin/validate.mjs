@@ -56,7 +56,9 @@ if (files.length === 0) {
 }
 
 const problems = validate(files, REFERENCE, load);
-const byLevel = LEVELS.map((lv) => problems.filter((p) => p.level === lv));
+// ファイルごとに、上から順に直していけるよう行番号順に並べる
+const inOrder = (a, b) => a.file.localeCompare(b.file) || (a.line ?? 0) - (b.line ?? 0);
+const byLevel = LEVELS.map((lv) => problems.filter((p) => p.level === lv).sort(inOrder));
 
 const show = (list, label, mark) => {
   if (list.length === 0) return;
@@ -69,7 +71,7 @@ const show = (list, label, mark) => {
       console.log(`  ${p.file}`);
       last = p.file;
     }
-    console.log(`    ${p.path}`);
+    console.log(`    ${p.line ? `${p.line}行目 ` : ''}${p.path}`);
     console.log(`      ${p.msg}`);
     if (p.hint) console.log(`      → ${p.hint}`);
   }
