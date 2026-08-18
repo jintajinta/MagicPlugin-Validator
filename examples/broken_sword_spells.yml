@@ -15,7 +15,7 @@ broken_sword_slash:
   effects:
     cast:
     - location: origin
-      particle: redstone          # 1.20.5 で dust に改名された
+      particle: redstonee         # 打ち間違い。存在しない名前は何も描画されない
       delay: 40                   # ミリ秒。50 未満は 0tick になって遅延しない
       particle_data: 0.1
       particle_speed: 0.2         # particle_data と同じ値を指すので片方が無視される
