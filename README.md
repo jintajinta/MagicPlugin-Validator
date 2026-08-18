@@ -2,60 +2,13 @@
 
 [**→ ブラウザで使う**](https://jintajinta.github.io/MagicPlugin-Validator/)
 
-[MagicPlugin](https://github.com/elBukkit/MagicPlugin) の wand / spell YAML を、配置前に検証します。
-
-Magic は書き間違いを警告しません。未知のキーも無効な enum 名も黙って無視され、
-`/magic load` は成功したのに「なぜか何も起きない」という形でしか表に出てきません。
-このツールはそれを保存前に見つけます。
-
-検証はすべてブラウザ内で完結します。**ファイルはどこにも送信されません。**
+[MagicPlugin](https://github.com/elBukkit/MagicPlugin) の wand / spell YAML を検証します。
 
 対象: Minecraft 1.21.8 / Paper。
 
----
-
-## 何を見ているか
-
-出力は深刻度4段階です。
-
-| | 内容 | 対応 |
-|---|---|---|
-| `✗ エラー` | 存在しない Particle / Sound / Material、wand の無効キー、不明な EffectLib クラス、`alt_castN` の番号ずれ | 必ず潰す。その行は確実に効かない |
-| `⚠ 重要` | **構文は正しいのに黙って実害が出る**もの | 必ず潰す。エラーが出ないぶんこちらの方が危険 |
-| `! 警告` | タイポの疑い、推奨から外れている | 見て判断する |
-| `· 未確認` | 正しいかどうかこのツールでは判断できなかった行 | ソースを確認して有効なら無視してよい |
-
-### 「⚠ 重要」の中身
-
-エラーにならないまま挙動が変わるものだけを集めています。**すべて MagicPlugin のソースで裏を取ってあります。**
-
-| 判定 | 根拠 |
-|---|---|
-| `AreaOfEffect` / `LineOfEffect` の小数 `radius` は `int` に切り捨てられる（`0.75` → `0` で当たらなくなる） | `AreaOfEffectAction:46,55` / `LineOfEffectAction:45,55` |
-| `Velocity` に `min_speed` / `max_speed` があると `speed` は無視される | `VelocityAction:91-104` が高度ベースの式で上書きする |
-| `CustomProjectile` に `velocity` があると `speed` は無視される（単位も20倍違う） | `CustomProjectileAction:185-186` |
-| `CheckVelocity` の `min_speed` は意味が反転している | `CheckVelocityAction:24` が `speed > min_speed → 不許可` |
-| `ConeOfEffect` は `radius` を読まない（扇の広さは `fov`） | `ConeOfEffectAction:37-38` と `Targeting:618-651` のどちらにも無い |
-| `PotionEffect` で `potion_effects` があると `add_effects` は無視される | `PotionEffectAction:103` |
-| `PotionEffect` で `add_effects` をマップで書くと `amplifier` は無視される | `PotionEffectAction:110-113` |
-| `effect_<type>: N`（カンマ無し）の N は「強さ」で tick 数ではない | `BaseSpell.getPotionEffects:811-820` |
-| `Damage` の `no_damage_ticks: 1〜10` は `0` と同じで多段ヒットを防げない | `DamageAction:133-136` ＋ バニラの `invulnerableTime > 10` |
-| `ModifyNoDamageTicks` は `no_damage_ticks > 20` を 20 に丸める | `ModifyNoDamageTicksAction:34` |
-| `Delay` の `delay` はミリ秒。50 未満は 1tick に丸まる | `DelayAction:38` |
-| `effects:` の `delay` はミリ秒を整数除算するので 50 未満は **0tick**（遅延なし）になる | `EffectPlayer:259`。`Delay` とは丸め方向が逆 |
-| `effects:` の `particle_data` と `particle_speed` は同じ値を指す（後者が勝つ） | `EffectPlayer:341-342` |
-| wand の `icon_inactive_delay` も 50 未満は 0tick | `Wand:2511,736` |
-| 技を持つ wand に `indestructible` が無いと耐久で壊れて wand ごと消える | `Wand.java` |
-| `fail` / `tick` / `spawn` / `headshot` / `miss` / `maxdepth` を対応していない Action に書くと、そのブロックは実行されない | `addHandler(spell, "...")` の登録先 |
-
-`fail:` などのサブアクションの**中身も再帰的に検証します**。ここは見落としやすく、
-中に書いた Particle 名の間違いは実行時まで気付けません。
-
----
-
 ## CLI として使う
 
-Node 18 以上。依存パッケージはありません（js-yaml は同梱）。
+Node 18 以上。依存パッケージはありません。
 
 ```bash
 git clone https://github.com/jintajinta/MagicPlugin-Validator
@@ -102,20 +55,6 @@ node tools/build_reference.mjs
 抽出は正規表現ベースなので **網羅的ですが完全ではありません**。
 拾いきれなかったキーは `· 未確認` に出ます。挙動に確信が要る場合はソースを直接読んでください。
 
----
-
-## 検証していないこと
-
-- **CustomModelData がリソースパックに登録済みか。** パックは環境ごとに違うため対象外です
-- **カスタム音（`namespace.path` 形式）の実在。** 同上。バニラの Sound 名は検証します
-- **ゲームバランス。** 数値が壊れていないかは見ますが、強すぎるかどうかは見ません
-
----
-
 ## ライセンス
 
 MIT License.
-
-参照データは [MagicPlugin](https://github.com/elBukkit/MagicPlugin)（MIT）と
-[EffectLib](https://github.com/Slikey/EffectLib) のソース、および Paper 1.21.8 の enum から生成しています。
-同梱の [js-yaml](https://github.com/nodeca/js-yaml) は MIT License（`vendor/js-yaml.LICENSE`）。
