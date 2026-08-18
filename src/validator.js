@@ -108,6 +108,21 @@ export function validate(files, ref, parseYaml) {
     return SPELL.parameter_keys.includes(key);
   }
 
+  // 1.20.5 より前の旧パーティクル名。Paper の enum には無いが、実機（Paper 1.21.8 +
+  // Magic 10.10.6）で正しく描画されることを確認済みなので、エラーにはしない。
+  // 出典は EffectLib の ParticleUtil が持つ別名一覧（Magic jar 内の
+  // com/elmakers/mine/bukkit/slikey/effectlib/util/ParticleUtil.class）。
+  // 存在しない名前（例: 打ち間違い）は実機でも描画されないので、その判定は残してある。
+  const PARTICLE_ALIASES = new Set([
+    'ambient_entity_effect', 'angry_villager', 'angryvillager', 'block_crack', 'block_dust', 'blockcrack', 'blockdust', 'crit_magic', 'damage_indicator', 'damageindicator', 'depthsuspend', 'dragon_breath', 'dragonbreath', 'drip_lava', 'drip_water', 'driplava', 'dripwater', 'droplet', 'enchantment_table', 'enchantmenttable', 'endrod', 'explode', 'explosion_huge', 'explosion_large', 'explosion_normal', 'fallingdust', 'fireworks_spark', 'fireworksspark', 'happyvillager', 'hugeexplosion', 'iconcrack', 'instantspell', 'item_crack', 'largeexplode', 'largesmoke', 'magiccrit', 'mob_appearance', 'mobappearance', 'mobspell', 'mobspellambient', 'mycelium', 'reddust', 'redstone', 'smoke_large', 'smoke_normal', 'snow_shovel', 'snowball', 'snowballpoof', 'snowshovel', 'spell', 'spell_instant', 'spell_mob', 'spell_mob_ambient', 'spell_witch', 'suspended_depth', 'sweep_attack', 'sweepattack', 'town_aura', 'townaura', 'villager_angry', 'villager_happy', 'wake', 'water_bubble', 'water_drop', 'water_splash', 'water_wake', 'witchmagic',
+  ]);
+
+  /** 実機で通るパーティクル名か（現行 enum ＋ 旧名） */
+  const particleValid = (v, PARTICLES) => {
+    const s = String(v);
+    return PARTICLES.has(s.toUpperCase()) || PARTICLE_ALIASES.has(s.toLowerCase());
+  };
+
   /** effects: の1エントリを検証する */
   function checkEffectEntry(file, path, entry) {
     if (!entry || typeof entry !== 'object') return;
@@ -142,9 +157,9 @@ export function validate(files, ref, parseYaml) {
                 'EffectLib のソースで綴りを確認（無効なキーは無言で無視される）');
             }
           }
-          if (v.particle && !PARTICLES.has(String(v.particle).toUpperCase())) {
+          if (v.particle && !particleValid(v.particle, PARTICLES)) {
             err(file, `${path}.effectlib.particle`, `1.21.8 に存在しない Particle: ${v.particle}`,
-              'Paper の Particle enum で確認（redstone→dust など 1.20.5 で大量改名）');
+              'Paper の Particle enum で確認（旧名も通るが、打ち間違いは何も描画されない）');
           }
         }
         continue;
@@ -160,9 +175,9 @@ export function validate(files, ref, parseYaml) {
         note(file, `${path}.${k}`, `effects のキーとして確認できない: ${k}`,
           'MagicPlugin の EffectPlayer のソースで確認（このツールの参照データに無いだけの可能性もある）');
       }
-      if (k === 'particle' && !PARTICLES.has(String(v).toUpperCase())) {
+      if (k === 'particle' && !particleValid(v, PARTICLES)) {
         err(file, `${path}.particle`, `1.21.8 に存在しない Particle: ${v}`,
-          'Paper の Particle enum で確認（redstone→dust / fireworks_spark→firework / block_crack→block）');
+          'Paper の Particle enum で確認（旧名も通る。打ち間違いは何も描画されない）');
       }
       if ((k === 'sound' || k === 'custom_sound') && typeof v === 'string') {
         checkSound(file, `${path}.${k}`, v);
@@ -254,7 +269,7 @@ export function validate(files, ref, parseYaml) {
             '多段ヒットを防ぐなら指定しない。連撃させたいなら 0 と書く');
         }
         if (k === 'sound' && typeof v === 'string') checkSound(file, `${p}.sound`, v);
-        if (k === 'particle' && typeof v === 'string' && !PARTICLES.has(v.toUpperCase())) {
+        if (k === 'particle' && typeof v === 'string' && !particleValid(v, PARTICLES)) {
           err(file, `${p}.particle`, `1.21.8 に存在しない Particle: ${v}`, 'Paper の Particle enum で確認');
         }
         if ((k === 'brush' || k === 'material') && typeof v === 'string'
