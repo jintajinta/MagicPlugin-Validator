@@ -52,7 +52,6 @@ body {
 .wrap { max-width: 940px; margin: 0 auto; padding: 32px 20px 80px; }
 header h1 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: -0.01em; }
 header p { margin: 0; color: var(--muted); }
-header .sub { font-size: 0.9rem; margin-top: 10px; }
 a { color: var(--accent); }
 
 .panel {
@@ -91,7 +90,7 @@ a { color: var(--accent); }
 .files button:hover { background: var(--border); color: var(--text); }
 
 textarea {
-  width: 100%; min-height: 190px; resize: vertical;
+  width: 100%; min-height: 190px; resize: vertical; margin-top: 14px;
   background: var(--code); color: var(--text);
   border: 1px solid var(--border); border-radius: var(--radius);
   padding: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -163,14 +162,10 @@ details[open] summary { margin-bottom: 10px; }
 <header>
   <h1>MagicPlugin Validator</h1>
   <p><a href="https://github.com/elBukkit/MagicPlugin">MagicPlugin</a> の wand / spell YAML を検証します。</p>
-  <p class="sub">
-    Magic は書き間違いを警告しません。未知のキーも無効な enum 名も黙って無視され、「なぜか何も起きない」になります。
-    このページはそれを配置前に見つけます。<strong>検証はブラウザ内で完結し、ファイルはどこにも送信されません。</strong>
-  </p>
 </header>
 
 <section class="panel">
-  <h2>1. ファイルを読み込む</h2>
+  <h2>ファイルを読み込む、または貼り付ける</h2>
   <label id="drop" for="picker">
     <strong>ここに .yml をドロップ</strong>
     クリックして選択（複数可）。wand と spell を一緒に入れると相互参照もチェックします
@@ -178,15 +173,12 @@ details[open] summary { margin-bottom: 10px; }
   </label>
   <ul class="files" id="filelist"></ul>
 
+  <textarea id="paste" spellcheck="false" placeholder="または、ここに直接貼り付ける&#10;&#10;my_sword:&#10;  name: マイソード&#10;  icon: iron_sword&#10;  alternate_spell: my_sword_slash&#10;  right_click: alt_cast&#10;"></textarea>
+
   <div class="row">
     <button class="btn" id="sample">サンプルを読み込む</button>
     <button class="btn" id="clear">クリア</button>
   </div>
-</section>
-
-<section class="panel">
-  <h2>2. または貼り付ける</h2>
-  <textarea id="paste" spellcheck="false" placeholder="my_sword:&#10;  name: マイソード&#10;  icon: iron_sword&#10;  alternate_spell: my_sword_slash&#10;  right_click: alt_cast&#10;"></textarea>
 </section>
 
 <section class="panel">
@@ -231,15 +223,7 @@ details[open] summary { margin-bottom: 10px; }
 </section>
 
 <footer>
-  <p>
-    参照データは <a href="https://github.com/elBukkit/MagicPlugin">MagicPlugin</a> と
-    <a href="https://github.com/Slikey/EffectLib">EffectLib</a> のソース、および Paper 1.21.8 の enum から生成しています。
-    Minecraft 1.21.8 / Paper 想定。
-  </p>
-  <p>
-    <a href="https://github.com/jintajinta/MagicPlugin-Validator">ソース・CLI 版・不具合報告</a> ·
-    MIT License
-  </p>
+  <p>MIT License</p>
 </footer>
 
 </div>
