@@ -145,10 +145,12 @@ button.btn.primary:hover { opacity: .9; color: #fff; }
 .ok { color: var(--ok); font-weight: 600; }
 .empty { color: var(--muted); }
 
-table.levels { border-collapse: collapse; width: 100%; font-size: .88rem; margin-top: 6px; }
-table.levels th, table.levels td { border-bottom: 1px solid var(--border); padding: 7px 8px; text-align: left; vertical-align: top; }
-table.levels th { color: var(--muted); font-weight: 600; white-space: nowrap; }
-table.levels td:first-child { white-space: nowrap; font-weight: 600; }
+.lead { margin: 0 0 18px; color: var(--muted); font-size: .9rem; }
+.lv { border-left: 3px solid currentColor; padding: 2px 0 2px 14px; margin-bottom: 18px; }
+.lv .name { font-weight: 700; margin-bottom: 2px; }
+.lv .what { color: var(--text); }
+.lv .eg, .lv .todo { color: var(--muted); font-size: .88rem; }
+.lv .todo { margin-top: 2px; }
 
 footer { margin-top: 40px; color: var(--muted); font-size: .85rem; }
 code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
@@ -189,21 +191,35 @@ details[open] summary { margin-bottom: 10px; }
 
 <section class="panel">
   <h2>深刻度について</h2>
-  <table class="levels">
-    <tr><th>レベル</th><th>意味</th><th>対応</th></tr>
-    <tr><td style="color:var(--error)">✗ エラー</td>
-        <td>存在しない Particle / Sound / Material、wand の無効キー、不明な EffectLib クラス、<code>alt_castN</code> の番号ずれ</td>
-        <td>必ず潰す。その行は確実に効かない</td></tr>
-    <tr><td style="color:var(--major)">⚠ 重要</td>
-        <td>構文は正しいのに黙って実害が出る。値が切り捨てられる、併記した片方が無視される、耐久で壊れる など</td>
-        <td>必ず潰す。エラーが出ないぶんこちらの方が危険</td></tr>
-    <tr><td style="color:var(--warn)">! 警告</td>
-        <td>タイポの疑い、推奨から外れている</td>
-        <td>見て判断する</td></tr>
-    <tr><td style="color:var(--note)">· 補足</td>
-        <td>参照データの機械抽出が漏れているかもしれない行</td>
-        <td>ソースを確認して有効なら無視してよい</td></tr>
-  </table>
+  <p class="lead">上ほど確実に壊れています。<strong>✗ と ⚠ は直すもの</strong>、<strong>! と · は見て判断するもの</strong>です。</p>
+
+  <div class="lv" style="color:var(--error)">
+    <div class="name">✗ エラー</div>
+    <div class="what">その行が丸ごと効きません。</div>
+    <div class="eg">例: <code>particle: redstone</code> と書いた → 1.20.5 で <code>dust</code> に改名されたので、何も表示されない</div>
+    <div class="todo">→ 必ず直す</div>
+  </div>
+
+  <div class="lv" style="color:var(--major)">
+    <div class="name">⚠ 重要</div>
+    <div class="what">動きますが、書いた通りには動きません。</div>
+    <div class="eg">例: <code>radius: 0.75</code> と書いた → 内部で <code>0</code> に切り捨てられ、範囲攻撃が誰にも当たらない</div>
+    <div class="todo">→ 必ず直す。それらしく動いてしまうぶん、一番見つけにくいのがここ</div>
+  </div>
+
+  <div class="lv" style="color:var(--warn)">
+    <div class="name">! 警告</div>
+    <div class="what">効いていない可能性が高い行です。多くは綴り間違い。</div>
+    <div class="eg">例: 見覚えのない Action 名 → タイポか、他のプラグインが提供しているもの</div>
+    <div class="todo">→ 中身を見て判断する</div>
+  </div>
+
+  <div class="lv" style="color:var(--note)">
+    <div class="name">· 未確認</div>
+    <div class="what">正しいかどうか、このツールでは判断できなかった行です。問題ないことも多くあります。</div>
+    <div class="eg">例: このツールが知らないキー → MagicPlugin 側にあれば、そのままで問題ない</div>
+    <div class="todo">→ だいたい無視してよい</div>
+  </div>
   <details style="margin-top:14px">
     <summary>「⚠ 重要」で何を見ているか</summary>
     <p style="margin-top:0">

@@ -8,7 +8,7 @@ export const LEVEL_LABEL = {
   error: ['✗', 'エラー（確実に効かない）'],
   major: ['⚠', '重要（構文は通るが実害が出る）'],
   warn: ['!', '警告（タイポ・推奨違反の疑い）'],
-  note: ['·', '補足（抽出漏れかもしれない）'],
+  note: ['·', '未確認（判断できなかった行）'],
 };
 
 /**
@@ -39,7 +39,7 @@ export function validate(files, ref, parseYaml) {
   //   2 major   構文は正しいのに黙って実害が出る（耐久で壊れる / 値が切り捨てられる / 併記が無視される）
   //             ★エラーが出ないので気付けない。Magic で一番事故るのはここ
   //   3 warn    タイポの疑い、または推奨から外れている
-  //   4 note    機械抽出の網羅漏れかもしれない。ソースを見て問題なければ無視してよい
+  //   4 note    このツールでは正誤を判断できなかった行。ソースを見て有効なら無視してよい
   const problems = [];
   const report = (level, file, path, msg, hint) =>
     problems.push({ level, file, path, msg, hint });
@@ -120,8 +120,8 @@ export function validate(files, ref, parseYaml) {
         continue;
       }
       if (!EFFECTS.entry_keys.includes(k)) {
-        note(file, `${path}.${k}`, `effects エントリのキーとして抽出できていない: ${k}`,
-          'MagicPlugin の EffectPlayer のソースで確認（機械抽出漏れの可能性もあるのでソース確認推奨）');
+        note(file, `${path}.${k}`, `effects のキーとして確認できない: ${k}`,
+          'MagicPlugin の EffectPlayer のソースで確認（このツールの参照データに無いだけの可能性もある）');
       }
       if (k === 'particle' && !PARTICLES.has(String(v).toUpperCase())) {
         err(file, `${path}.particle`, `1.21.8 に存在しない Particle: ${v}`,
@@ -200,7 +200,7 @@ export function validate(files, ref, parseYaml) {
           continue;
         }
         if (cls && ACTIONS.actions[cls] && !actionParamValid(cls, k)) {
-          note(file, `${p}.${k}`, `${cls} のパラメータとして抽出できていない: ${k}`,
+          note(file, `${p}.${k}`, `${cls} のパラメータとして確認できない: ${k}`,
             'MagicPlugin の該当 Action のソースで確認（タイポは無言で無視されるので要注意）');
         }
         // AreaOfEffectAction:55 / LineOfEffectAction:55 はどちらも radius を getDouble で読んだ後
@@ -435,7 +435,7 @@ export function validate(files, ref, parseYaml) {
     }
     for (const k of Object.keys(def)) {
       if (!SPELL.top_keys.includes(k)) {
-        note(file, `${name}.${k}`, `spell のトップレベルキーとして想定外: ${k}`,
+        note(file, `${name}.${k}`, `spell のトップレベルキーとして確認できない: ${k}`,
           'MagicPlugin の BaseSpell のソースで確認');
       }
     }
@@ -471,7 +471,7 @@ export function validate(files, ref, parseYaml) {
       for (const k of Object.keys(def.parameters)) {
         if (SPELL.parameter_keys.includes(k)) continue;
         if (ANY_ACTION_PARAM.has(k)) continue;
-        note(file, `${name}.parameters.${k}`, `spell パラメータとして抽出できていない: ${k}`,
+        note(file, `${name}.parameters.${k}`, `spell パラメータとして確認できない: ${k}`,
           'MagicPlugin のソースで確認');
       }
     }
