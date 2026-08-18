@@ -149,8 +149,7 @@ button.btn.primary:hover { opacity: .9; color: #fff; }
 .lv { border-left: 3px solid currentColor; padding: 2px 0 2px 14px; margin-bottom: 18px; }
 .lv .name { font-weight: 700; margin-bottom: 2px; }
 .lv .what { color: var(--text); }
-.lv .eg, .lv .todo { color: var(--muted); font-size: .88rem; }
-.lv .todo { margin-top: 2px; }
+.lv .eg { color: var(--muted); font-size: .88rem; }
 
 footer { margin-top: 40px; color: var(--muted); font-size: .85rem; }
 code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
@@ -197,28 +196,24 @@ details[open] summary { margin-bottom: 10px; }
     <div class="name">✗ エラー</div>
     <div class="what">その行が丸ごと効きません。</div>
     <div class="eg">例: <code>particle: redstone</code> と書いた → 1.20.5 で <code>dust</code> に改名されたので、何も表示されない</div>
-    <div class="todo">→ 必ず直す</div>
   </div>
 
   <div class="lv" style="color:var(--major)">
     <div class="name">⚠ 重要</div>
     <div class="what">動きますが、書いた通りには動きません。</div>
     <div class="eg">例: <code>radius: 0.75</code> と書いた → 内部で <code>0</code> に切り捨てられ、範囲攻撃が誰にも当たらない</div>
-    <div class="todo">→ 必ず直す。それらしく動いてしまうぶん、一番見つけにくいのがここ</div>
   </div>
 
   <div class="lv" style="color:var(--warn)">
     <div class="name">! 警告</div>
     <div class="what">効いていない可能性が高い行です。多くは綴り間違い。</div>
     <div class="eg">例: 見覚えのない Action 名 → タイポか、他のプラグインが提供しているもの</div>
-    <div class="todo">→ 中身を見て判断する</div>
   </div>
 
   <div class="lv" style="color:var(--note)">
     <div class="name">· 未確認</div>
     <div class="what">正しいかどうか、このツールでは判断できなかった行です。問題ないことも多くあります。</div>
     <div class="eg">例: このツールが知らないキー → MagicPlugin 側にあれば、そのままで問題ない</div>
-    <div class="todo">→ だいたい無視してよい</div>
   </div>
   <details style="margin-top:14px">
     <summary>「⚠ 重要」で何を見ているか</summary>
